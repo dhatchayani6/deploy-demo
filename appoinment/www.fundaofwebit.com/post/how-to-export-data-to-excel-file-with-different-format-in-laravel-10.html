@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.fundaofwebit.com/post/how-to-export-data-to-excel-file-with-different-format-in-laravel-10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="fUaTJSZz1w07q1oh0AMmt3R7xeu2B55rbFHVfh8h">
+
+    <title>How to Export data to Excel file with different format/extension in Laravel 10
+</title>
+
+    <meta name="keywords" content="How to Export data to Excel file with different format/extension in Laravel 10, how to export data in excel file in laravel, how to export data from database in excel sheet in laravel, laravel excel export date format,
+">
+    <meta name="description" content="How to Export data to Excel file with different format/extension in Laravel 10, how to export data in excel file in laravel, how to export data from database in excel sheet in laravel, laravel excel export date format,
+">
+    <meta name="author" content="Funda of Web IT">
+
+    <link rel="canonical" href="how-to-export-data-to-excel-file-with-different-format-in-laravel-10.html">
+
+    <link rel="shortcut icon" href="../frontend/images/favicon.jpg" type="image/x-icon">
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link href="../../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+   
+
+    <link rel="stylesheet" href="../frontend/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="../frontend/css/custom2.css">
+    <link rel="stylesheet" href="../frontend/css/custom.css">
+    <link rel="stylesheet" href="../frontend/css/style.css">
+
+    <link rel="stylesheet" href="../frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../frontend/css/owl.theme.default.min.css">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@fundaofwebit">
+    <meta name="twitter:title" content="How to Export data to Excel file with different format/extension in Laravel 10
+">
+    <meta name="twitter:description" content="How to Export data to Excel file with different format/extension in Laravel 10, how to export data in excel file in laravel, how to export data from database in excel sheet in laravel, laravel excel export date format,
+">
+    <meta name="twitter:image" content="../frontend/images/logo.png">
+    
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Funda Of Web IT",
+        "url": "https://www.fundaofwebit.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.fundaofwebit.com/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+     
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": "How to Export data to Excel file with different format/extension in Laravel 10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.fundaofwebit.com/post/how-to-export-data-to-excel-file-with-different-format-in-laravel-10"
+      },
+      "datePublished": "2024-01-20",
+      "dateModified": "2024-01-21",
+      "author": {
+        "@type": "Person",
+        "name": "Ved Prakash N",
+        "url": "https://www.linkedin.com/in/ved-prakash-n-2ab634167/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Funda Of Web IT",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fundaofwebit.com/frontend/images/logo.png"
+        }
+      }
+    }
+</script>
+
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177236605-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-177236605-1');
+    </script>
+
+</head>
+<body>
+
+    <div class="shadow-sm border-bottom sticky-top">
+    <div class="top-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none d-md-block">
+                    <a href="javascript:void(0)" class="top-nav-link">Follow Us:</a>
+                    <a href="https://www.facebook.com/fundaofwebit" class="top-nav-link br-r">Facebook</a>
+                    <a href="https://www.instagram.com/funda_of_web_it/" class="top-nav-link">Instagram</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a class="top-nav-link br-r" href="https://www.fundacodester.com/collections" target="_blank">Download Source Code</a>
+                    <a class="top-nav-link" href="https://www.fundaofwebit.com/youtube">My YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container -fluid">
+
+            <a class="navbar-brand" href="https://www.fundaofwebit.com/">
+                <img src="../frontend/images/logo.png" class="nav-logo" alt="Funda of Web IT" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PHP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php">PHP Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-solutions">PHP Solutions</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-firebase">PHP Firebase</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-oop">PHP OOP CRUD Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-pdo">PHP PDO Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Laravel
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-tips">Laravel Tips</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-5-8">Laravel 5.8 Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-8">Laravel 8 Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Python
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/python">Python Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/django">Django Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/selenium-python-tutorial">Selenium Python Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/programming-in-java">Java Programs</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-programs">PHP Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/sql">SQL Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/jquery">jQuery Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/git">Git Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/posts">Posts</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="btn1-outline" href="https://www.fundaofwebit.com/courses">Free Courses</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+    <div id="app">
+
+        
+        <main>
+            
+
+<div class="section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <div class="bg-white shadow-sm p-3">
+
+                    <h1 class="text-primary1 my-3 fs-28 fw-bold">How to Export data to Excel file with different format/extension in Laravel 10</h1>
+
+                    <div class="py-2 px-2 fs-12 bg-blue-grad text-white rounded-2">
+                        <span class="mx-2">By Ved Prakash N </span> |
+                        <span class="mx-2"><i class="fa fa-calendar"></i> Jan 20, 2024</span> |
+                        <span class="mx-2">Laravel</span>
+                    </div>
+
+                    <div class="mb-1">
+                        <span class="fs-14">
+                                                        Share :
+                            <a href="https://api.whatsapp.com/send?text=*How%20to%20Export%20data%20to%20Excel%20file%20with%20different%20format/extension%20in%20Laravel%2010*%0A%0Ahttps://www.fundaofwebit.com/post/how-to-export-data-to-excel-file-with-different-format-in-laravel-10" class="px-2 fs-14 text-decoration-underline"><i class="fa fa-whatsapp font-weight-bold"></i> Whatsapp</a>
+                            <p class="p149 d-none">https://www.fundaofwebit.com/post/how-to-export-data-to-excel-file-with-different-format-in-laravel-10</p>
+                            <button onclick="copyToClipboard('.p149')" class="px-2 fs-14 btn btn-link text-decoration-underline">Copy Link</button>
+                        </span>
+                    </div>
+
+                    <div class="main-heading">
+
+                        
+                    </div>
+
+                    <div class="description py-3">
+                        <h3>How to Export data to Excel file in Laravel 10</h3><p><br></p><p>In this post, you will learn how to export data from a database table to Excel file with different format / extension in Laravel 10.&nbsp;</p><p>We will create a Form, we will select the Export Format / Extension (.xlsx , .xls, csv, etc.), and download the Excel file.</p><p>We will specify / declare the Headings (Column Headings) like Name, Email, Phone, etc.. in the Excel file to be exported.</p><p>Let's get started.</p><p><br></p><p><b>Step 1:</b> Install Laravel Excel Package via composer as follows:&nbsp;</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">composer <span style="color: #c586c0;">require</span> maatwebsite/excel</div><p><br></p><p><b>Step 2:</b>&nbsp;Configure the Package</p><p>The <b>Maatwebsite\Excel\ExcelServiceProvider</b> is <b>auto-discovered</b> and registered by default. </p><p>If you want to register it yourself, add the ServiceProvider in <b>"config/app.php"</b>: ( providers &amp; aliases )<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #ce9178;">'providers'</span> =&gt; [</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">// ...</span></div><div>&nbsp; &nbsp; Maatwebsite\Excel\<span style="color: #4ec9b0;">ExcelServiceProvider</span>::<span style="color: #569cd6;">class</span>,</div><div>],</div><br><div><span style="color: #ce9178;">'aliases'</span> =&gt; [</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">// ...</span></div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'Excel'</span> =&gt; Maatwebsite\Excel\Facades\<span style="color: #4ec9b0;">Excel</span>::<span style="color: #569cd6;">class</span>,</div><div>],</div></div><p><br></p><p><b>Step 3: </b>To publish the config, run the vendor publish command<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config</div><p><br></p><h5><b>Note:</b> We will follow with the example of "Customer Detail" to be exported in an Excel file. So I have used <b>Model </b>as a&nbsp;<b>Customer</b>&nbsp;(&nbsp;<b>app/ Models/ Customer.php</b> )</h5><p><br></p><p><b>Step 4: Create a Controller</b> named CustomerController using the below artisan command:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:controller CustomerController</div><p>After successfully creating the CustomerController, paste the below code in it. </p><p>In this controller, write the logic of export excel with different export format / file extensions as follows:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Http\Controllers</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Http\<span style="color: #4ec9b0;">Request</span>;</div><div><span style="color: #569cd6;">use</span> App\Exports\<span style="color: #4ec9b0;">CustomersExport</span>;</div><div><span style="color: #569cd6;">use</span> Maatwebsite\Excel\Facades\<span style="color: #4ec9b0;">Excel</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">CustomerController</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Controller</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">exportDataInExcel</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">if</span>(<span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">type</span> == <span style="color: #ce9178;">'xlsx'</span>){</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$fileExt</span> = <span style="color: #ce9178;">'xlsx'</span>;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$exportFormat</span> = \Maatwebsite\Excel\<span style="color: #4ec9b0;">Excel</span>::XLSX;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; }</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">elseif</span>(<span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">type</span> == <span style="color: #ce9178;">'csv'</span>){</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$fileExt</span> = <span style="color: #ce9178;">'csv'</span>;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$exportFormat</span> = \Maatwebsite\Excel\<span style="color: #4ec9b0;">Excel</span>::CSV;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; }</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">elseif</span>(<span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">type</span> == <span style="color: #ce9178;">'xls'</span>){</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$fileExt</span> = <span style="color: #ce9178;">'xls'</span>;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$exportFormat</span> = \Maatwebsite\Excel\<span style="color: #4ec9b0;">Excel</span>::XLS;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; }</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">else</span>{</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$fileExt</span> = <span style="color: #ce9178;">'xlsx'</span>;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$exportFormat</span> = \Maatwebsite\Excel\<span style="color: #4ec9b0;">Excel</span>::XLSX;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; }</div><br><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$filename</span> = <span style="color: #ce9178;">"customers-"</span>.<span style="color: #dcdcaa;">date</span>(<span style="color: #ce9178;">'d-m-Y'</span>).<span style="color: #ce9178;">"."</span>.<span style="color: #9cdcfe;">$fileExt</span>;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #4ec9b0;">Excel</span>::<span style="color: #dcdcaa;">download</span>(<span style="color: #569cd6;">new</span> <span style="color: #4ec9b0;">CustomersExport</span>, <span style="color: #9cdcfe;">$filename</span>, <span style="color: #9cdcfe;">$exportFormat</span>);</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><br></p><p><b>Step 5: Create a Excel Export Class</b> named CustomerExport with the following command:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:export CustomerExport</div><p>After successfully creating the Import Class, paste the below code in the following path : <b>app/ Exports/ CustomerExport.php</b></p><h6><b>There are different ways to Export data to excel file like:</b></h6><p><b>1. </b>Export Data in Excel Sheet <b>with Headings</b> (Column Names)</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Exports</span>;</div><br><div><span style="color: #569cd6;">use</span> App\Models\<span style="color: #4ec9b0;">Customer</span>;</div><div><span style="color: #569cd6;">use</span> Maatwebsite\Excel\Concerns\<span style="color: #4ec9b0;">FromCollection</span>;</div><div><span style="color: #569cd6;">use</span> Maatwebsite\Excel\Concerns\<span style="color: #4ec9b0;">WithHeadings</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">CustomersExport</span> <span style="color: #569cd6;">implements</span> <span style="color: #4ec9b0;">FromCollection</span>, <span style="color: #4ec9b0;">WithHeadings</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; * </span><span style="color: #569cd6;">@return</span><span style="color: #6a9955;"> \Illuminate\Support\</span><span style="color: #4ec9b0;">Collection</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; */</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">collection</span>()</div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #4ec9b0;">Customer</span>::<span style="color: #dcdcaa;">select</span>(<span style="color: #ce9178;">'name'</span>,<span style="color: #ce9178;">'email'</span>,<span style="color: #ce9178;">'phone'</span>)-&gt;<span style="color: #dcdcaa;">get</span>();</div><div>&nbsp; &nbsp; }</div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">headings</span>(): <span style="color: #569cd6;">array</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'Name'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'Email'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'Phone'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; ];</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><br></p><p><b>2.</b> Export Data in Excel Sheet <b>without Headings</b><br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Exports</span>;</div><br><div><span style="color: #569cd6;">use</span> App\Models\<span style="color: #4ec9b0;">Customer</span>;</div><div><span style="color: #569cd6;">use</span> Maatwebsite\Excel\Concerns\<span style="color: #4ec9b0;">FromCollection</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">CustomersExport</span> <span style="color: #569cd6;">implements</span> <span style="color: #4ec9b0;">FromCollection</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; * </span><span style="color: #569cd6;">@return</span><span style="color: #6a9955;"> \Illuminate\Support\</span><span style="color: #4ec9b0;">Collection</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; */</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">collection</span>()</div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #4ec9b0;">Customer</span>::<span style="color: #dcdcaa;">all</span>();</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><br></p><p><b>3.</b>&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">Export Data to Excel Sheet from a <b>"</b></span><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>Blade View"</b> using <b>"</b></span><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>FormView"</b> concern&nbsp;</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Exports</span>;</div><br><div><span style="color: #569cd6;">use</span> App\Models\<span style="color: #4ec9b0;">Customer</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Contracts\View\<span style="color: #4ec9b0;">View</span>;</div><div><span style="color: #569cd6;">use</span> Maatwebsite\Excel\Concerns\<span style="color: #4ec9b0;">FromView</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">CustomersExport</span> <span style="color: #569cd6;">implements</span> <span style="color: #4ec9b0;">FromView</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">view</span>(): <span style="color: #4ec9b0;">View</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #dcdcaa;">view</span>(<span style="color: #ce9178;">'customer.export'</span>, [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'customers'</span> =&gt; <span style="color: #4ec9b0;">Customer</span>::<span style="color: #dcdcaa;">all</span>()</div><div>&nbsp; &nbsp; &nbsp; &nbsp; ]);</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p>Now, while export data to an excel file from a "Blade view" using a FormView concern, you have to create a Blade file in the following path: <b>resources/ views/ customer/ export.blade.php</b> and paste the below code:&nbsp;&nbsp;</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">table</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">thead</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">tr</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">th</span><span style="color: #808080;">&gt;</span>Name<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">th</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">th</span><span style="color: #808080;">&gt;</span>Email<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">th</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">th</span><span style="color: #808080;">&gt;</span>Phone<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">th</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">tr</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">thead</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">tbody</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">@foreach</span>(<span style="color: #9cdcfe;">$customers</span> as <span style="color: #9cdcfe;">$customer</span>)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">tr</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">td</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$customer</span>-&gt;<span style="color: #9cdcfe;">name</span> <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">td</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">td</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$customer</span>-&gt;<span style="color: #9cdcfe;">email</span> <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">td</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">td</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$customer</span>-&gt;<span style="color: #9cdcfe;">phone</span> <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">td</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">tr</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">@endforeach</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">tbody</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">table</span><span style="color: #808080;">&gt;</span></div></div><p><br></p><p><b>Step 6: </b>Use this below in Form to export / download the excel file as per your requirement.&nbsp;</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">form</span> <span style="color: #9cdcfe;">action</span>=<span style="color: #ce9178;">"</span><span style="color: #dcdcaa;">{{</span><span style="color: #ce9178;"> </span><span style="color: #dcdcaa;">url</span><span style="color: #ce9178;">('customer/export') </span><span style="color: #dcdcaa;">}}</span><span style="color: #ce9178;">"</span> <span style="color: #9cdcfe;">method</span>=<span style="color: #ce9178;">"GET"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">label</span><span style="color: #808080;">&gt;</span>Export Customer Data in Excel File<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">label</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"input-group mt-2"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">select</span> <span style="color: #9cdcfe;">name</span>=<span style="color: #ce9178;">"type"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"form-control"</span> <span style="color: #9cdcfe;">required</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">""</span><span style="color: #808080;">&gt;</span>Select Excel Format<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"xlsx"</span><span style="color: #808080;">&gt;</span>XLSX<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"csv"</span><span style="color: #808080;">&gt;</span>CSV<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"xls"</span><span style="color: #808080;">&gt;</span>XLS<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">select</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">button</span> <span style="color: #9cdcfe;">type</span>=<span style="color: #ce9178;">"submit"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"btn btn-success"</span><span style="color: #808080;">&gt;</span>Export<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">button</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">form</span><span style="color: #808080;">&gt;</span></div></div><p><br></p><p><b>Step 7: </b>Create a Route</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: #4ec9b0;">Route</span>::<span style="color: #dcdcaa;">get</span>(<span style="color: #ce9178;">'customer/export'</span>, [App\Http\Controllers\<span style="color: #4ec9b0;">CustomerController</span>::<span style="color: #569cd6;">class</span>, <span style="color: #ce9178;">'exportDataInExcel'</span>]);</div><p><br></p><p>That's it.&nbsp;Now, we are ready to export data to an Excel file at : http://localhost:8000/customer/export</p><p><b>I hope it helps you. Thanks for reading.</b></p>
+                    </div>
+
+                    <div class="full-block-ads border m-2 p-1 text-center w-100">
+                        
+                        <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-blue -grad">
+                        <h4 class="text-white mb-0">Latest Posts</h4>
+                    </div>
+                    <div class="card-body">
+                                                <div class="lp-title"><a href="laravel-policy-using-spatie-roles-and-permission-tutorial-step-by-step.html">> Laravel Policy using Spatie Roles &amp; Permission Tutorial step by step</a></div>
+                                                <div class="lp-title"><a href="laravel-10-authorization-policy-tutorial-step-by-step-with-example.html">> Laravel 10 Authorization Policy Tutorial step by step | All about Laravel Policy</a></div>
+                                                <div class="lp-title"><a href="multi-guard-authentication-with-breeze-in-laravel-10.html">> Multi Guard Authentication with Breeze in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-spatie-user-roles-and-permissions-tutorial.html">> Laravel 10 Spatie User Roles and Permissions Tutorial</a></div>
+                                                <div class="lp-title"><a href="how-to-make-pagination-in-laravel.html">> How to make pagination in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-export-data-to-excel-file-with-different-format-in-laravel-10.html">> How to Export data to Excel file with different format/extension in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-import-excel-file-data-into-database-in-laravel.html">> How to Import Excel file data into database in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-multiple-image-upload-with-example.html">> Laravel 10 Multiple Image Upload with Example</a></div>
+                                                <div class="lp-title"><a href="ocr-integration-in-laravel-using-laraocr-package-with-tesseract.html">> OCR Integration in Laravel using LaraOCR Package with Tesseract</a></div>
+                                                <div class="lp-title"><a href="laravel-10-crud-with-image-upload-tutorial-with-example.html">> Laravel 10 CRUD with File / Image Upload Tutorial with Example</a></div>
+                                                <div class="lp-title"><a href="laravel-10-api-authentication-using-laravel-sanctum.html">> Laravel 10 - API Authentication using Laravel Sanctum</a></div>
+                                                <div class="lp-title"><a href="different-ways-to-store-data-in-laravel-10.html">> Different Ways to store data in laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-form-validation-tutorial-with-example.html">> Laravel Form Validation Tutorial with example | All about Validation in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-eloquent-model-tutorial-with-example.html">> Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-migrations-tutorial-with-example.html">> Laravel Migrations Tutorial with example | All about Migrations Guide in laravel</a></div>
+                                                <div class="lp-title"><a href="laravel-blade-components-tutorial-with-example-all-about-components-in-laravel.html">> Laravel Blade Components Tutorial with example - All about components in laravel</a></div>
+                                            </div>
+                </div>
+
+                <div class="border p-2 sticky-1">
+
+                    <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-verticle-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="3613281146"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<section class="footer-section-area">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 mt-3">
+                    <h3 class="fw-bold text-white">Funda of Web IT</h3>
+                    <p class="text-white">
+                        2018 - 2023 ©
+                        <a href="https://fundaofwebit.com/" target="_blank" class="text-white font-weight-bold">Funda of Web IT</a>.
+                        All rights reserved.
+                    </p>
+
+                    <p class="footer-nav-link">
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Funda Codester</a> |
+                        <a href="http://blog.fundaofwebit.com/" target="_blank">About Us</a> |
+                        <a href="https://www.fundaofwebit.com/posts">Posts</a> |
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Download Project Source Code</a>
+                    </p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="fw-bold text-white">Stay Connected</h3>
+                    <ul class="footer-icon-social">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.twitter.com/funda_of_web_it" target="_blank" class="social-link">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.instagram.com/funda_of_web_it/" target="_blank" class="social-link">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.youtube.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="../frontend/js/jquery-3.6.0.min.js"></script>
+    <script src="../frontend/js/bootstrap5.bundle.min.js"></script>
+    <script src="../frontend/js/owl.carousel.js"></script>
+    <script src="../frontend/js/custom.js"></script>
+
+
+    <script>
+        setInterval(function() {
+            window.location.reload();
+        }, 1500000);
+    </script>
+
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            alert("Copied Successfully");
+            $temp.remove();
+        }
+    </script>
+
+    
+</body>
+
+<!-- Mirrored from www.fundaofwebit.com/post/how-to-export-data-to-excel-file-with-different-format-in-laravel-10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:14 GMT -->
+</html>

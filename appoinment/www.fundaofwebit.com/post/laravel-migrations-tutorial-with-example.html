@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.fundaofwebit.com/post/laravel-migrations-tutorial-with-example by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="fUaTJSZz1w07q1oh0AMmt3R7xeu2B55rbFHVfh8h">
+
+    <title>Laravel Migrations Tutorial with example | All about Migrations Guide in laravel
+</title>
+
+    <meta name="keywords" content="Laravel Migrations Tutorial with example | All about Migrations Guide in laravel, laravel database table migration tutorial step by step, ste by step laravel migrations tutorial, laravel tutorial migration tables, how to create tables in laravel tutorial, Guide to Laravel Migrations
+">
+    <meta name="description" content="Laravel Migrations Tutorial with example | All about Migrations Guide in laravel, laravel database table migration tutorial step by step, ste by step laravel migrations tutorial, laravel tutorial migration tables, how to create tables in laravel tutorial, Guide to Laravel Migrations
+">
+    <meta name="author" content="Funda of Web IT">
+
+    <link rel="canonical" href="laravel-migrations-tutorial-with-example.html">
+
+    <link rel="shortcut icon" href="../frontend/images/favicon.jpg" type="image/x-icon">
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link href="../../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+   
+
+    <link rel="stylesheet" href="../frontend/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="../frontend/css/custom2.css">
+    <link rel="stylesheet" href="../frontend/css/custom.css">
+    <link rel="stylesheet" href="../frontend/css/style.css">
+
+    <link rel="stylesheet" href="../frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../frontend/css/owl.theme.default.min.css">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@fundaofwebit">
+    <meta name="twitter:title" content="Laravel Migrations Tutorial with example | All about Migrations Guide in laravel
+">
+    <meta name="twitter:description" content="Laravel Migrations Tutorial with example | All about Migrations Guide in laravel, laravel database table migration tutorial step by step, ste by step laravel migrations tutorial, laravel tutorial migration tables, how to create tables in laravel tutorial, Guide to Laravel Migrations
+">
+    <meta name="twitter:image" content="../frontend/images/logo.png">
+    
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Funda Of Web IT",
+        "url": "https://www.fundaofwebit.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.fundaofwebit.com/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+     
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": "Laravel Migrations Tutorial with example | All about Migrations Guide in laravel",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.fundaofwebit.com/post/laravel-migrations-tutorial-with-example"
+      },
+      "datePublished": "2023-11-26",
+      "dateModified": "2023-11-28",
+      "author": {
+        "@type": "Person",
+        "name": "Ved Prakash N",
+        "url": "https://www.linkedin.com/in/ved-prakash-n-2ab634167/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Funda Of Web IT",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fundaofwebit.com/frontend/images/logo.png"
+        }
+      }
+    }
+</script>
+
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177236605-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-177236605-1');
+    </script>
+
+</head>
+<body>
+
+    <div class="shadow-sm border-bottom sticky-top">
+    <div class="top-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none d-md-block">
+                    <a href="javascript:void(0)" class="top-nav-link">Follow Us:</a>
+                    <a href="https://www.facebook.com/fundaofwebit" class="top-nav-link br-r">Facebook</a>
+                    <a href="https://www.instagram.com/funda_of_web_it/" class="top-nav-link">Instagram</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a class="top-nav-link br-r" href="https://www.fundacodester.com/collections" target="_blank">Download Source Code</a>
+                    <a class="top-nav-link" href="https://www.fundaofwebit.com/youtube">My YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container -fluid">
+
+            <a class="navbar-brand" href="https://www.fundaofwebit.com/">
+                <img src="../frontend/images/logo.png" class="nav-logo" alt="Funda of Web IT" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PHP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php">PHP Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-solutions">PHP Solutions</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-firebase">PHP Firebase</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-oop">PHP OOP CRUD Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-pdo">PHP PDO Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Laravel
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-tips">Laravel Tips</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-5-8">Laravel 5.8 Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-8">Laravel 8 Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Python
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/python">Python Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/django">Django Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/selenium-python-tutorial">Selenium Python Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/programming-in-java">Java Programs</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-programs">PHP Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/sql">SQL Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/jquery">jQuery Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/git">Git Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/posts">Posts</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="btn1-outline" href="https://www.fundaofwebit.com/courses">Free Courses</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+    <div id="app">
+
+        
+        <main>
+            
+
+<div class="section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <div class="bg-white shadow-sm p-3">
+
+                    <h1 class="text-primary1 my-3 fs-28 fw-bold">Laravel Migrations Tutorial with example | All about Migrations Guide in laravel</h1>
+
+                    <div class="py-2 px-2 fs-12 bg-blue-grad text-white rounded-2">
+                        <span class="mx-2">By Ved Prakash N </span> |
+                        <span class="mx-2"><i class="fa fa-calendar"></i> Nov 26, 2023</span> |
+                        <span class="mx-2">Laravel</span>
+                    </div>
+
+                    <div class="mb-1">
+                        <span class="fs-14">
+                                                        Share :
+                            <a href="https://api.whatsapp.com/send?text=*Laravel%20Migrations%20Tutorial%20with%20example%20|%20All%20about%20Migrations%20Guide%20in%20laravel*%0A%0Ahttps://www.fundaofwebit.com/post/laravel-migrations-tutorial-with-example" class="px-2 fs-14 text-decoration-underline"><i class="fa fa-whatsapp font-weight-bold"></i> Whatsapp</a>
+                            <p class="p138 d-none">https://www.fundaofwebit.com/post/laravel-migrations-tutorial-with-example</p>
+                            <button onclick="copyToClipboard('.p138')" class="px-2 fs-14 btn btn-link text-decoration-underline">Copy Link</button>
+                        </span>
+                    </div>
+
+                    <div class="main-heading">
+
+                        
+                    </div>
+
+                    <div class="description py-3">
+                        <h3>Laravel Migrations Tutorial with example | All about Migrations in Laravel 10</h3><p><br></p><p>Laravel Migrations is a powerful tool that helps manage and control database schema changes in a structured and consistent manner, making database development and maintenance more manageable and organized.&nbsp;Laravel Migrations are a version control system for your database schema.</p><p><br></p><p>In this post, you will learn how to use migrations in Laravel and what all things can be done with Laravel migration artisan command, so let's get started:</p><p><br></p><h5>1. Create a Migration</h5><p>In Laravel, you can create a migration using the <b>make:migration</b> Artisan command. Open your terminal and navigate to your Laravel project directory. Then, run the following command:</p><p><span style="font-weight: bolder;">Step 1: Create migration:</span><br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:migration create_products_table</div><p>This command will create a new migration file in the <b>database/migrations</b> directory with a name like 2023_11_27_032932_create_products_table.php. The timestamp in the filename ensures that migrations are executed in the order they were created.</p><p><b>Note:</b> In a migration artisan command: create_{your_table_name}_table. "create" and "table" word are fixed prefixes, so you are creating a new table with those words.</p><p><br></p><p><b>Step 2:&nbsp;</b><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>Define the Schema in the Migration File</b></span></p><p>Let's open the new migration file from the database/migrations directory named as&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">2023_11_27_032932_create_products_table and add the columns to the migration file.&nbsp;&nbsp;</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Migrations\<span style="color: #4ec9b0;">Migration</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Schema\<span style="color: #4ec9b0;">Blueprint</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Support\Facades\<span style="color: #4ec9b0;">Schema</span>;</div><br><div><span style="color: #c586c0;">return</span> <span style="color: #569cd6;">new</span> <span style="color: #569cd6;">class</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Migration</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Run the migrations.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">create</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">id</span>();</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">string</span>(<span style="color: #ce9178;">'name'</span>);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">text</span>(<span style="color: #ce9178;">'description'</span>)-&gt;<span style="color: #dcdcaa;">nullable</span>();</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">decimal</span>(<span style="color: #ce9178;">'price'</span>, <span style="color: #b5cea8;">8</span>, <span style="color: #b5cea8;">2</span>);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">integer</span>(<span style="color: #ce9178;">'stock'</span>);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">timestamps</span>();</div><div>&nbsp; &nbsp; &nbsp; &nbsp; });</div><div>&nbsp; &nbsp; }</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Reverse the migrations.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">down</span>(): <span style="color: #569cd6;">void</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">dropIfExists</span>(<span style="color: #ce9178;">'products'</span>);</div><div>&nbsp; &nbsp; }</div><div>};</div></div><p>In this example, the migration creates a products table with columns for id, name, description, price, stock, and timestamps (created_at and updated_at).</p><p><br></p><p><b>Step 3:&nbsp;</b><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>Run the Migration</b></span></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Let's migrate the database migration file into the database using Artisan command. so it will create a table in the database.</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:migrate</div><p><br></p><h5>2. Adding New Columns in existing Table&nbsp;</h5><p><b>STEP 1:</b> Run the following command to create a new migration file that adds a new_column as "status" to the above products table:</p><p>Syntax for the migration artisan command:&nbsp;<b>php artisan make:migration add_NEW_COLUMN_to_MY_TABLE_NAME_table --table=MY_TABLE_NAME</b></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:migration add_status_to_example_table --table=products</div><p><br></p><p><b>STEP 2: </b>let's add the new column as given below.<span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Open the newly created migration file (e.g., 2023_09_18_123456_add_status_to_products_table.php) and modify the up and down methods as follows:<br></span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Migrations\<span style="color: #4ec9b0;">Migration</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Schema\<span style="color: #4ec9b0;">Blueprint</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Support\Facades\<span style="color: #4ec9b0;">Schema</span>;</div><br><div><span style="color: #c586c0;">return</span> <span style="color: #569cd6;">new</span> <span style="color: #569cd6;">class</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Migration</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Run the migrations.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">table</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">boolean</span>(<span style="color: #ce9178;">'status'</span>)-&gt;<span style="color: #dcdcaa;">default</span>(<span style="color: #b5cea8;">1</span>)-&gt;<span style="color: #dcdcaa;">comment</span>(<span style="color: #ce9178;">'1=active,0=in-active'</span>);</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; });</div><div>&nbsp; &nbsp; }</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Reverse the migrations.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">down</span>(): <span style="color: #569cd6;">void</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">table</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">dropColumn</span>(<span style="color: #ce9178;">'status'</span>);</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; });</div><div>&nbsp; &nbsp; }</div><div>};</div></div><p><br></p><p><span style="font-weight: bolder;">Step 3:&nbsp;</span><span style="text-align: var(--bs-body-text-align); background-color: transparent;"><span style="font-weight: bolder;">Run the Migration</span></span><br></p><p>So this below command will&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">executes all pending migrations and also it will add new columns named status to your existing database table products.</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:migrate</div><p>This command executes all pending migrations. Laravel keeps track of which migrations have already been run in the migrations table of your database.<br></p><p><br></p><h5>3. Add Columns after a specific column</h5><p>Example 1:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">table</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">after</span>(<span style="color: #ce9178;">'description'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #9cdcfe;">$table</span>) {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">decimal</span>(<span style="color: #ce9178;">'original_price'</span>, <span style="color: #b5cea8;">8</span>, <span style="color: #b5cea8;">2</span>);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">string</span>(<span style="color: #ce9178;">'small_description'</span>, <span style="color: #b5cea8;">500</span>);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; });</div><br><div>&nbsp; &nbsp; });</div><div>}</div></div><p><br></p><p>Example 2:&nbsp;</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">table</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">decimal</span>(<span style="color: #ce9178;">'original_price'</span>, <span style="color: #b5cea8;">8</span>, <span style="color: #b5cea8;">2</span>)-&gt;<span style="color: #dcdcaa;">after</span>(<span style="color: #ce9178;">'price'</span>)-&gt;<span style="color: #dcdcaa;">nullable</span>();</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">string</span>(<span style="color: #ce9178;">'small_description'</span>)-&gt;<span style="color: #dcdcaa;">after</span>(<span style="color: #ce9178;">'name'</span>)-&gt;<span style="color: #dcdcaa;">nullable</span>();</div><br><div>&nbsp; &nbsp; });</div><div>}</div></div><p><br></p><h4>4.&nbsp;Adding Column To Index</h4><p>1. You can do it at <b>table creation</b>&nbsp;and <b>add Index</b>&nbsp;to the column:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">table</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">string</span>(<span style="color: #ce9178;">'product_code'</span>)<span style="text-align: var(--bs-body-text-align);">-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">unique</span><span style="text-align: var(--bs-body-text-align);">()</span><span style="text-align: var(--bs-body-text-align);">-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">index</span><span style="text-align: var(--bs-body-text-align);">();</span></div><br><div>&nbsp; &nbsp; });</div><div>}</div></div><p>2. You can <b>alter </b>the <b>existing table</b> and just create a new index using:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">table</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">index</span>(<span style="color: #ce9178;">'product_code'</span>);</div><br><div>&nbsp; &nbsp; });</div><div>}</div></div><p>3. If you want to <b>RENAME </b>the index:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">renameIndex</span>(<span style="color: #ce9178;">'product_code'</span>, <span style="color: #ce9178;">'your_new_column'</span>);</div><p>4. If you want to <b>REMOVE </b>the index:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">dropIndex</span>(<span style="color: #ce9178;">'product_code'</span>);</div><p><br></p><h4 style="color: rgb(0, 0, 0);">5. Foreign Key Relation</h4><p>Take an example for the <b>products </b>table, where we are storing the category ID in it. Let's give the foreign key relation as follows.&nbsp;&nbsp;</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">create</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">id</span>();</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">unsignedBigInteger</span>(<span style="color: #ce9178;">'category_id'</span>);</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existings columns</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existings columns</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">foreign</span>(<span style="color: #ce9178;">'category_id'</span>)-&gt;<span style="color: #dcdcaa;">references</span>(<span style="color: #ce9178;">'id'</span>)-&gt;<span style="color: #dcdcaa;">on</span>(<span style="color: #ce9178;">'categories'</span>)-&gt;<span style="color: #dcdcaa;">onDelete</span>(<span style="color: #ce9178;">'cascade'</span>);</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">timestamps</span>();</div><div>&nbsp; &nbsp; });</div><div>}</div></div><p>In the&nbsp;<span style="font-weight: bolder;">products&nbsp;</span>table migration, notice the column&nbsp;<span style="font-weight: bolder;">category_id</span>&nbsp;that's set as an unsigned big integer to hold the foreign key reference to the&nbsp;<span style="font-weight: bolder;">id</span>&nbsp;column in the&nbsp;<span style="font-weight: bolder;">categories</span>&nbsp;table. The&nbsp;<span style="font-weight: bolder;">foreign()</span>&nbsp;method then establishes the foreign key relationship, referencing the&nbsp;<span style="font-weight: bolder;">id</span>&nbsp;column in the&nbsp;<span style="font-weight: bolder;">categories</span>&nbsp;table.</p><p><br></p><p>You have many ways to give a Foreign key in Laravel</p><p>1. Referencing the column and giving the relation.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">table</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">unsignedBigInteger</span>(<span style="color: #ce9178;">'category_id'</span>);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">foreign</span>(<span style="color: #ce9178;">'category_id'</span>)-&gt;<span style="color: #dcdcaa;">references</span>(<span style="color: #ce9178;">'id'</span>)-&gt;<span style="color: #dcdcaa;">on</span>(<span style="color: #ce9178;">'categories'</span>);</div><div>&nbsp; &nbsp; });</div><div>}</div></div><p>2. This Foreign key relation is shorter. It will automatically take the id and reference and all.<span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">create</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">id</span>();</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">foreignId</span>(<span style="color: #ce9178;">'category_id'</span>)-&gt;<span style="color: #dcdcaa;">constrained</span>(<span style="color: #ce9178;">'categories'</span>)-&gt;<span style="color: #dcdcaa;">onUpdate</span>(<span style="color: #ce9178;">'cascade'</span>)-&gt;<span style="color: #dcdcaa;">onDelete</span>(<span style="color: #ce9178;">'cascade'</span>);</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existings columns</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existings columns</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">timestamps</span>();</div><div>&nbsp; &nbsp; });</div><div>}</div></div><p>Any additional column modifiers must be called before constrained().</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">create</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">id</span>();</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">foreignId</span>(<span style="color: #ce9178;">'category_id'</span>)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -&gt;<span style="color: #dcdcaa;">nullable</span>()</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -&gt;<span style="color: #dcdcaa;">constrained</span>(<span style="color: #ce9178;">'categories'</span>)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -&gt;<span style="color: #dcdcaa;">onUpdate</span>(<span style="color: #ce9178;">'cascade'</span>)-&gt;<span style="color: #dcdcaa;">onDelete</span>(<span style="color: #ce9178;">'cascade'</span>);</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existings columns</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existings columns</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">timestamps</span>();</div><div>&nbsp; &nbsp; });</div><div>}</div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">3. Foreign Key relation with <b>Index</b></span><br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">up</span>(): <span style="color: #569cd6;">void</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Schema</span>::<span style="color: #dcdcaa;">create</span>(<span style="color: #ce9178;">'products'</span>, <span style="color: #569cd6;">function</span> (<span style="color: #4ec9b0;">Blueprint</span> <span style="color: #9cdcfe;">$table</span>) {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">id</span>();</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">foreignId</span>(<span style="color: #ce9178;">'category_id'</span>)-&gt;<span style="color: #dcdcaa;">index</span>();</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existings columns</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existings columns</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$table</span>-&gt;<span style="color: #dcdcaa;">timestamps</span>();</div><div>&nbsp; &nbsp; });</div><div>}</div></div><p><br></p><h4>6. Migration Commands</h4><p>1. <b>Run Migration</b>: Executes all pending migrations that haven't been run yet.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan migrate</div><p>2.&nbsp;<b>Rolling Back </b>the<b> Last </b>Migration:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan migrate:rollback</div><p>3. <b>Rolling Back</b> Migrations <b>Batch Number wise</b>:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan migrate:rollback --step=<span style="color: #b5cea8;">1</span></div><p>4.&nbsp;<b>Resetting</b> migrations:</p><p>You can use the <b>migrate:reset</b> command to roll back all your application migrations in the database.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan migrate:reset</div><p>5.&nbsp;<b>Refreshing </b>migrations</p><p>You can use the <b>migrate:refresh</b> command to recreate your entire database. It rolls back all your migrations and executes the migrate command again.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan migrate:refresh</div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">6. <b>Fresh </b>migration</span></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">The <b>migrate:fresh</b> command drops all the tables in the database before executing the migrate command.</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan migrate:fresh</div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><i><b>Extra caution should be taken with migrate:fresh on applications that share databases because it drops all the tables in that database.</b></i></span></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">7.&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Rolling Back and Re-migrating with Seed Data:</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan migrate:refresh --seed</div><p><br></p><h4>7. Seeders in Laravel</h4><p>In Laravel, seeders are used to populate the database with sample or default data. Here are the primary commands related to seeding in Laravel:<br></p><p>Creating a Seeder using Artisan Command<span style="background-color: transparent; text-align: var(--bs-body-text-align);">: (Syntax)</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:seeder SeederName</div><p>This command generates a new seeder class in the database/seeders directory.<br></p><p><b>1. Create a ProductSeeder - Let's see with an example:</b></p><p><b>STEP 1:&nbsp;</b>Generate the Seeder:&nbsp;</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:seeder ProductSeeder</div><p>This command generates a new seeder class in the <b>database/seeders</b> directory named ProductSeeder.php file.</p><p><span style="font-weight: bolder;"><span style="background-color: transparent; text-align: var(--bs-body-text-align);">STEP</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span></span><span style="text-align: var(--bs-body-text-align); background-color: transparent;"><span style="font-weight: bolder;">2:</span>&nbsp;</span><span style="text-align: var(--bs-body-text-align); background-color: transparent;">Modify the&nbsp;<span style="font-weight: bolder;">ProductSeeder class&nbsp;</span>(ProductSeeder.php) in database/seeders:</span><br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div style="line-height: 19px;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">Database\Seeders</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Console\Seeds\<span style="color: #4ec9b0;">WithoutModelEvents</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\<span style="color: #4ec9b0;">Seeder</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Support\Facades\<span style="color: #4ec9b0;">DB</span>;</div><div><span style="color: #569cd6;">use</span> App\Models\<span style="color: #4ec9b0;">Product</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">ProductSeeder</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Seeder</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Run the database seeds.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">run</span>(): <span style="color: #569cd6;">void</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$products</span> = [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'Product 1'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> =&gt; <span style="color: #ce9178;">'Description for Product 1'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #b5cea8;">29.99</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span> =&gt; <span style="color: #b5cea8;">100</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'created_at'</span> =&gt; <span style="color: #dcdcaa;">now</span>(),</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'updated_at'</span> =&gt; <span style="color: #dcdcaa;">now</span>(),</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'Product 2'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> =&gt; <span style="color: #ce9178;">'Description for Product 2'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #b5cea8;">39.99</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span> =&gt; <span style="color: #b5cea8;">50</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'created_at'</span> =&gt; <span style="color: #dcdcaa;">now</span>(),</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'updated_at'</span> =&gt; <span style="color: #dcdcaa;">now</span>(),</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; ];</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #4ec9b0;">DB</span>::<span style="color: #dcdcaa;">table</span>(<span style="color: #ce9178;">'products'</span>)-&gt;<span style="color: #dcdcaa;">insert</span>(<span style="color: #9cdcfe;">$products</span>);</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">//OR</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="text-align: var(--bs-body-text-align); color: rgb(78, 201, 176);">Product</span><span style="text-align: var(--bs-body-text-align);">::</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">createMany</span><span style="text-align: var(--bs-body-text-align);">(</span><span style="text-align: var(--bs-body-text-align); color: rgb(156, 220, 254);">$products</span><span style="text-align: var(--bs-body-text-align);">);</span></div><div>&nbsp; &nbsp; }</div><div>}</div></div></div><p>If you are using the Product Model to insert data. So Ensure the Product model has the protected $fillable property set with the columns you want to mass-assign, typically including all the columns except the primary key (id).<br></p><p><b>STEP 3:</b>&nbsp;Run the Seeder</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan db:seed --<span style="color: #569cd6;">class</span>=ProductSeeder</div><p><br></p><p><b>2.&nbsp;Running All Seeders:</b></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>STEP 1: </b>You can give all the Seeders in DatabaseSeeder.php file (&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">database/ seeders/ DatabaseSeeder.php&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">) as follows:</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">Database\Seeders</span>;</div><br><div><span style="color: #6a9955;">// use Illuminate\Database\Console\Seeds\WithoutModelEvents;</span></div><div><span style="color: #569cd6;">use</span> Illuminate\Database\<span style="color: #4ec9b0;">Seeder</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">DatabaseSeeder</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Seeder</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">run</span>(): <span style="color: #569cd6;">void</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">$this</span>-&gt;<span style="color: #dcdcaa;">call</span>(<span style="color: #4ec9b0;">CategorySeeder</span>::<span style="color: #569cd6;">class</span>);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">$this</span>-&gt;<span style="color: #dcdcaa;">call</span>(<span style="color: #4ec9b0;">ProductSeeder</span>::<span style="color: #569cd6;">class</span>);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// Add more seeders as needed</span></div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><br></p><p><b>STEP 2:</b>&nbsp;Run the following command to execute all seeders:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan db:seed</div><p>Executes all seed classes within the DatabaseSeeder class (database/ seeders/ DatabaseSeeder.php).<br></p><div><br></div><div><b>3.&nbsp;Refreshing and Seeding Database</b></div><div>Refreshing Database and Running Seeders:<br></div><div><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan migrate:refresh --seed</div></div><div>Rolls back all migrations, re-runs them, and seeds the database.</div><div><span style="font-weight: bolder;"><br></span></div><div><span style="font-weight: bolder;">4.&nbsp;Truncating Tables&nbsp;</span><span style="text-align: var(--bs-body-text-align); background-color: transparent;"><b>before Seeding :</b></span></div><div><span style="text-align: var(--bs-body-text-align); background-color: transparent;"><br></span></div><div><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan db:seed --<span style="color: #569cd6;">class</span>=SeederName --truncate</div></div><div>Truncates tables before seeding data.<br></div><div><br></div><div><br></div><p>I hope this helps you in your future coding. Thanks for reading.</p>
+                    </div>
+
+                    <div class="full-block-ads border m-2 p-1 text-center w-100">
+                        
+                        <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-blue -grad">
+                        <h4 class="text-white mb-0">Latest Posts</h4>
+                    </div>
+                    <div class="card-body">
+                                                <div class="lp-title"><a href="laravel-policy-using-spatie-roles-and-permission-tutorial-step-by-step.html">> Laravel Policy using Spatie Roles &amp; Permission Tutorial step by step</a></div>
+                                                <div class="lp-title"><a href="laravel-10-authorization-policy-tutorial-step-by-step-with-example.html">> Laravel 10 Authorization Policy Tutorial step by step | All about Laravel Policy</a></div>
+                                                <div class="lp-title"><a href="multi-guard-authentication-with-breeze-in-laravel-10.html">> Multi Guard Authentication with Breeze in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-spatie-user-roles-and-permissions-tutorial.html">> Laravel 10 Spatie User Roles and Permissions Tutorial</a></div>
+                                                <div class="lp-title"><a href="how-to-make-pagination-in-laravel.html">> How to make pagination in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-export-data-to-excel-file-with-different-format-in-laravel-10.html">> How to Export data to Excel file with different format/extension in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-import-excel-file-data-into-database-in-laravel.html">> How to Import Excel file data into database in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-multiple-image-upload-with-example.html">> Laravel 10 Multiple Image Upload with Example</a></div>
+                                                <div class="lp-title"><a href="ocr-integration-in-laravel-using-laraocr-package-with-tesseract.html">> OCR Integration in Laravel using LaraOCR Package with Tesseract</a></div>
+                                                <div class="lp-title"><a href="laravel-10-crud-with-image-upload-tutorial-with-example.html">> Laravel 10 CRUD with File / Image Upload Tutorial with Example</a></div>
+                                                <div class="lp-title"><a href="laravel-10-api-authentication-using-laravel-sanctum.html">> Laravel 10 - API Authentication using Laravel Sanctum</a></div>
+                                                <div class="lp-title"><a href="different-ways-to-store-data-in-laravel-10.html">> Different Ways to store data in laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-form-validation-tutorial-with-example.html">> Laravel Form Validation Tutorial with example | All about Validation in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-eloquent-model-tutorial-with-example.html">> Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-migrations-tutorial-with-example.html">> Laravel Migrations Tutorial with example | All about Migrations Guide in laravel</a></div>
+                                                <div class="lp-title"><a href="laravel-blade-components-tutorial-with-example-all-about-components-in-laravel.html">> Laravel Blade Components Tutorial with example - All about components in laravel</a></div>
+                                            </div>
+                </div>
+
+                <div class="border p-2 sticky-1">
+
+                    <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-verticle-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="3613281146"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<section class="footer-section-area">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 mt-3">
+                    <h3 class="fw-bold text-white">Funda of Web IT</h3>
+                    <p class="text-white">
+                        2018 - 2023 ©
+                        <a href="https://fundaofwebit.com/" target="_blank" class="text-white font-weight-bold">Funda of Web IT</a>.
+                        All rights reserved.
+                    </p>
+
+                    <p class="footer-nav-link">
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Funda Codester</a> |
+                        <a href="http://blog.fundaofwebit.com/" target="_blank">About Us</a> |
+                        <a href="https://www.fundaofwebit.com/posts">Posts</a> |
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Download Project Source Code</a>
+                    </p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="fw-bold text-white">Stay Connected</h3>
+                    <ul class="footer-icon-social">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.twitter.com/funda_of_web_it" target="_blank" class="social-link">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.instagram.com/funda_of_web_it/" target="_blank" class="social-link">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.youtube.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="../frontend/js/jquery-3.6.0.min.js"></script>
+    <script src="../frontend/js/bootstrap5.bundle.min.js"></script>
+    <script src="../frontend/js/owl.carousel.js"></script>
+    <script src="../frontend/js/custom.js"></script>
+
+
+    <script>
+        setInterval(function() {
+            window.location.reload();
+        }, 1500000);
+    </script>
+
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            alert("Copied Successfully");
+            $temp.remove();
+        }
+    </script>
+
+    
+</body>
+
+<!-- Mirrored from www.fundaofwebit.com/post/laravel-migrations-tutorial-with-example by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:15 GMT -->
+</html>

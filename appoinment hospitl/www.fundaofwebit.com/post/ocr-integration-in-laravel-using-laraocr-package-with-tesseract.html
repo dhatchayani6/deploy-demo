@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.fundaofwebit.com/post/ocr-integration-in-laravel-using-laraocr-package-with-tesseract by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 13:07:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="rVZ8bdiddqfHO5FFhCi72qjLPn2iRvdlVcago1f1">
+
+    <title>OCR Integration in Laravel using LaraOCR Package with Tesseract
+</title>
+
+    <meta name="keywords" content="OCR Integration in Laravel using LaraOCR Package with Tesseract, Extract words from an Image in Laravel, How to implement OCR in a website using Laravel,
+alimranahmed/LaraOCR: Laravel Optical Character, ocr integration in Laravel, How to convert image to text in Laravel
+">
+    <meta name="description" content="OCR Integration in Laravel using LaraOCR Package with Tesseract, Extract words from an Image in Laravel, How to implement OCR in a website using Laravel,
+alimranahmed/LaraOCR: Laravel Optical Character, ocr integration in Laravel, How to convert image to text in Laravel
+">
+    <meta name="author" content="Funda of Web IT">
+
+    <link rel="canonical" href="ocr-integration-in-laravel-using-laraocr-package-with-tesseract.html">
+
+    <link rel="shortcut icon" href="../frontend/images/favicon.jpg" type="image/x-icon">
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link href="../../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+   
+
+    <link rel="stylesheet" href="../frontend/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="../frontend/css/custom2.css">
+    <link rel="stylesheet" href="../frontend/css/custom.css">
+    <link rel="stylesheet" href="../frontend/css/style.css">
+
+    <link rel="stylesheet" href="../frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../frontend/css/owl.theme.default.min.css">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@fundaofwebit">
+    <meta name="twitter:title" content="OCR Integration in Laravel using LaraOCR Package with Tesseract
+">
+    <meta name="twitter:description" content="OCR Integration in Laravel using LaraOCR Package with Tesseract, Extract words from an Image in Laravel, How to implement OCR in a website using Laravel,
+alimranahmed/LaraOCR: Laravel Optical Character, ocr integration in Laravel, How to convert image to text in Laravel
+">
+    <meta name="twitter:image" content="../frontend/images/logo.png">
+    
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Funda Of Web IT",
+        "url": "https://www.fundaofwebit.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.fundaofwebit.com/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+     
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": "OCR Integration in Laravel using LaraOCR Package with Tesseract",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.fundaofwebit.com/post/ocr-integration-in-laravel-using-laraocr-package-with-tesseract"
+      },
+      "datePublished": "2024-01-05",
+      "dateModified": "2024-01-05",
+      "author": {
+        "@type": "Person",
+        "name": "Ved Prakash N",
+        "url": "https://www.linkedin.com/in/ved-prakash-n-2ab634167/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Funda Of Web IT",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fundaofwebit.com/frontend/images/logo.png"
+        }
+      }
+    }
+</script>
+
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177236605-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-177236605-1');
+    </script>
+
+</head>
+<body>
+
+    <div class="shadow-sm border-bottom sticky-top">
+    <div class="top-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none d-md-block">
+                    <a href="javascript:void(0)" class="top-nav-link">Follow Us:</a>
+                    <a href="https://www.facebook.com/fundaofwebit" class="top-nav-link br-r">Facebook</a>
+                    <a href="https://www.instagram.com/funda_of_web_it/" class="top-nav-link">Instagram</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a class="top-nav-link br-r" href="https://www.fundacodester.com/collections" target="_blank">Download Source Code</a>
+                    <a class="top-nav-link" href="https://www.fundaofwebit.com/youtube">My YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container -fluid">
+
+            <a class="navbar-brand" href="https://www.fundaofwebit.com/">
+                <img src="../frontend/images/logo.png" class="nav-logo" alt="Funda of Web IT" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PHP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php">PHP Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-solutions">PHP Solutions</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-firebase">PHP Firebase</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-oop">PHP OOP CRUD Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-pdo">PHP PDO Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Laravel
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-tips">Laravel Tips</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-5-8">Laravel 5.8 Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-8">Laravel 8 Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Python
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/python">Python Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/django">Django Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/selenium-python-tutorial">Selenium Python Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/programming-in-java">Java Programs</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-programs">PHP Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/sql">SQL Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/jquery">jQuery Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/git">Git Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/posts">Posts</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="btn1-outline" href="https://www.fundaofwebit.com/courses">Free Courses</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+    <div id="app">
+
+        
+        <main>
+            
+
+<div class="section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <div class="bg-white shadow-sm p-3">
+
+                    <h1 class="text-primary1 my-3 fs-28 fw-bold">OCR Integration in Laravel using LaraOCR Package with Tesseract</h1>
+
+                    <div class="py-2 px-2 fs-12 bg-blue-grad text-white rounded-2">
+                        <span class="mx-2">By Ved Prakash N </span> |
+                        <span class="mx-2"><i class="fa fa-calendar"></i> Jan 05, 2024</span> |
+                        <span class="mx-2">Laravel</span>
+                    </div>
+
+                    <div class="mb-1">
+                        <span class="fs-14">
+                                                        Share :
+                            <a href="https://api.whatsapp.com/send?text=*OCR%20Integration%20in%20Laravel%20using%20LaraOCR%20Package%20with%20Tesseract*%0A%0Ahttps://www.fundaofwebit.com/post/ocr-integration-in-laravel-using-laraocr-package-with-tesseract" class="px-2 fs-14 text-decoration-underline"><i class="fa fa-whatsapp font-weight-bold"></i> Whatsapp</a>
+                            <p class="p146 d-none">https://www.fundaofwebit.com/post/ocr-integration-in-laravel-using-laraocr-package-with-tesseract</p>
+                            <button onclick="copyToClipboard('.p146')" class="px-2 fs-14 btn btn-link text-decoration-underline">Copy Link</button>
+                        </span>
+                    </div>
+
+                    <div class="main-heading">
+
+                        
+                    </div>
+
+                    <div class="description py-3">
+                        <h2>OCR Integration in Laravel using LaraOCR Package with Tesseract</h2><h3>How to convert image to text in Laravel</h3><p><br></p><p>In this post, you will be learning about how to convert image to text in Laravel using LaraOCR Package with Tesseract OCR.</p><p><br></p><h4><b>Requirements</b></h4><p>OCR Engine Tesseract should be install in the system.<br><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Follow Tesseract installation guide here( </span><a href="https://github.com/tesseract-ocr/tessdoc?tab=readme-ov-file#compiling-and-installation" target="_blank">https://github.com/tesseract-ocr/tessdoc?tab=readme-ov-file#compiling-and-installation</a><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;).&nbsp;<br></span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Make sure from the command line you have the tesseract command available.</span></p><p><br></p><h5>Install on Windows (Tesseract installer for Windows) :</h5><p>Go to doc : <a href="https://github.com/UB-Mannheim/tesseract/wiki" target="_blank">https://github.com/UB-Mannheim/tesseract/wiki</a>&nbsp;</p><p>Check for the Latest installer :-&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">Current Latest is (05-01-2024) : tesseract-ocr-w64-setup-5.3.3.20231005.exe (64 bit)&nbsp;</span></p><p class="alert alert-info text-dark"><b>Note: While Installation, Copy the Destination Path : C:\Program Files\Tesseract-OCR<br></b></p><p><br></p><p>Once <b>Tesseract OCR</b> is <b>installed in your system</b>, you need to <b>check </b>the <b>Tesseract Version</b>, so there are <b>2 ways</b> to check it:</p><h5><b>Option 1: Specify the Full Path</b></h5><p>Open new command prompt and paste the below Full Path to the Tesseract executable.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">"C:\Program Files\Tesseract-OCR\tesseract.exe" --version</div><p><br></p><h5><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>Option 2: Add Tesseract to System PATH</b></span></h5><ol><li>The default installation directory on Windows is usually C:\Program Files\Tesseract-OCR.</li><li>Add Tesseract to System PATH:<br>* Open the Start menu and search for "Environment Variables" or "Edit the system environment variables."<br>* Click on "Environment Variables."<br>* Under "System variables," find the "Path" variable, select it, and click "Edit."<br>* Click "New" and add the path to the directory where Tesseract is installed (e.g., C:\Program Files\Tesseract-OCR).<br>* Click "OK" to close each dialog box.</li><li> Open new command prompt and run the below command</li></ol><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">tesseract --version</div><p><br></p><p><br></p><p><b>Step 1: Install Laravel Application</b><br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">composer create-project laravel/laravel example-app</div><p><br></p><p><b>Step 2: Install LaraOCR Package</b></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">composer require alimranahmed/laraocr</div><p>after successful installation push this package using the following command:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan vendor:publish --provider="Alimranahmed\LaraOCR\LaraOCRServiceProvider"</div><p><br></p><p><b>Step 3: Create a Controller </b>named OcrController.php with the artisan command:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:controller OcrController</div><p>after successfully creating controller, paste the below code:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Http\Controllers</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Http\<span style="color: #4ec9b0;">Request</span>;</div><div><span style="color: #569cd6;">use</span> Alimranahmed\LaraOCR\Facades\<span style="color: #4ec9b0;">OCR</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">OcrController</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Controller</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">ocrImage</span>()</div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$imagePath</span> = <span style="color: #dcdcaa;">public_path</span>(<span style="color: #ce9178;">'images/img-1.png'</span>);</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$ocrText</span> = <span style="color: #4ec9b0;">OCR</span>::<span style="color: #dcdcaa;">scan</span>(<span style="color: #9cdcfe;">$imagePath</span>);</div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// Use $ocrText as needed in your application</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #dcdcaa;">response</span>()-&gt;<span style="color: #dcdcaa;">json</span>([<span style="color: #ce9178;">'text'</span> =&gt; <span style="color: #9cdcfe;">$ocrText</span>]);</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><br></p><p><b>This is the Image I am using</b>:<br></p><p><img src="data:image/png;base64,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" data-filename="image.png" style="width: 50%;"></p><p><br></p><p><b>Step 4: Create a Route </b>in routes/web.php as follows:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: #4ec9b0;">Route</span>::<span style="color: #dcdcaa;">get</span>(<span style="color: #ce9178;">'/ocr'</span>, [App\Http\Controllers\<span style="color: #4ec9b0;">OcrController</span>::<span style="color: #569cd6;">class</span>, <span style="color: #ce9178;">'ocrImage'</span>]);</div><p><br></p><p><b>Step 5: Serve the application</b> using artisan command:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan serve</div><p><br></p><p>Finally, let's browse the URL so we can get the Text from the Image (The image is already added statically in the controller)</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">http://localhost:8000/ocr</div><p><br></p><p>Output:<br><span style="background-color: transparent; text-align: var(--bs-body-text-align);">{<br></span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp; "text": "How are you ?"<br></span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">}</span></p><p><br></p><p>I hope this helps you. Thanks for reading.</p>
+                    </div>
+
+                    <div class="full-block-ads border m-2 p-1 text-center w-100">
+                        
+                        <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-blue -grad">
+                        <h4 class="text-white mb-0">Latest Posts</h4>
+                    </div>
+                    <div class="card-body">
+                                                <div class="lp-title"><a href="laravel-policy-using-spatie-roles-and-permission-tutorial-step-by-step.html">> Laravel Policy using Spatie Roles &amp; Permission Tutorial step by step</a></div>
+                                                <div class="lp-title"><a href="laravel-10-authorization-policy-tutorial-step-by-step-with-example.html">> Laravel 10 Authorization Policy Tutorial step by step | All about Laravel Policy</a></div>
+                                                <div class="lp-title"><a href="multi-guard-authentication-with-breeze-in-laravel-10.html">> Multi Guard Authentication with Breeze in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-spatie-user-roles-and-permissions-tutorial.html">> Laravel 10 Spatie User Roles and Permissions Tutorial</a></div>
+                                                <div class="lp-title"><a href="how-to-make-pagination-in-laravel.html">> How to make pagination in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-export-data-to-excel-file-with-different-format-in-laravel-10.html">> How to Export data to Excel file with different format/extension in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-import-excel-file-data-into-database-in-laravel.html">> How to Import Excel file data into database in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-multiple-image-upload-with-example.html">> Laravel 10 Multiple Image Upload with Example</a></div>
+                                                <div class="lp-title"><a href="ocr-integration-in-laravel-using-laraocr-package-with-tesseract.html">> OCR Integration in Laravel using LaraOCR Package with Tesseract</a></div>
+                                                <div class="lp-title"><a href="laravel-10-crud-with-image-upload-tutorial-with-example.html">> Laravel 10 CRUD with File / Image Upload Tutorial with Example</a></div>
+                                                <div class="lp-title"><a href="laravel-10-api-authentication-using-laravel-sanctum.html">> Laravel 10 - API Authentication using Laravel Sanctum</a></div>
+                                                <div class="lp-title"><a href="different-ways-to-store-data-in-laravel-10.html">> Different Ways to store data in laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-form-validation-tutorial-with-example.html">> Laravel Form Validation Tutorial with example | All about Validation in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-eloquent-model-tutorial-with-example.html">> Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-migrations-tutorial-with-example.html">> Laravel Migrations Tutorial with example | All about Migrations Guide in laravel</a></div>
+                                                <div class="lp-title"><a href="laravel-blade-components-tutorial-with-example-all-about-components-in-laravel.html">> Laravel Blade Components Tutorial with example - All about components in laravel</a></div>
+                                            </div>
+                </div>
+
+                <div class="border p-2 sticky-1">
+
+                    <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-verticle-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="3613281146"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<section class="footer-section-area">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 mt-3">
+                    <h3 class="fw-bold text-white">Funda of Web IT</h3>
+                    <p class="text-white">
+                        2018 - 2023 ©
+                        <a href="https://fundaofwebit.com/" target="_blank" class="text-white font-weight-bold">Funda of Web IT</a>.
+                        All rights reserved.
+                    </p>
+
+                    <p class="footer-nav-link">
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Funda Codester</a> |
+                        <a href="http://blog.fundaofwebit.com/" target="_blank">About Us</a> |
+                        <a href="https://www.fundaofwebit.com/posts">Posts</a> |
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Download Project Source Code</a>
+                    </p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="fw-bold text-white">Stay Connected</h3>
+                    <ul class="footer-icon-social">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.twitter.com/funda_of_web_it" target="_blank" class="social-link">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.instagram.com/funda_of_web_it/" target="_blank" class="social-link">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.youtube.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="../frontend/js/jquery-3.6.0.min.js"></script>
+    <script src="../frontend/js/bootstrap5.bundle.min.js"></script>
+    <script src="../frontend/js/owl.carousel.js"></script>
+    <script src="../frontend/js/custom.js"></script>
+
+
+    <script>
+        setInterval(function() {
+            window.location.reload();
+        }, 1500000);
+    </script>
+
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            alert("Copied Successfully");
+            $temp.remove();
+        }
+    </script>
+
+    
+</body>
+
+<!-- Mirrored from www.fundaofwebit.com/post/ocr-integration-in-laravel-using-laraocr-package-with-tesseract by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 13:07:09 GMT -->
+</html>

@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.fundaofwebit.com/post/laravel-form-validation-tutorial-with-example by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 13:07:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="rVZ8bdiddqfHO5FFhCi72qjLPn2iRvdlVcago1f1">
+
+    <title>Laravel Form Validation Tutorial with example | All about Validation in Laravel 10
+</title>
+
+    <meta name="keywords" content="Laravel Form Validation Tutorial with example | All about Validation in Laravel 10, HOW TO VALIDATE FORM IN LARAVEL, how to do form validation in laravel 10, laravel form validation step by step, form request validation in laravel, laravel validation
+">
+    <meta name="description" content="Laravel Form Validation Tutorial with example | All about Validation in Laravel 10, HOW TO VALIDATE FORM IN LARAVEL, how to do form validation in laravel 10, laravel form validation step by step, form request validation in laravel, laravel validation
+">
+    <meta name="author" content="Funda of Web IT">
+
+    <link rel="canonical" href="laravel-form-validation-tutorial-with-example.html">
+
+    <link rel="shortcut icon" href="../frontend/images/favicon.jpg" type="image/x-icon">
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link href="../../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+   
+
+    <link rel="stylesheet" href="../frontend/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="../frontend/css/custom2.css">
+    <link rel="stylesheet" href="../frontend/css/custom.css">
+    <link rel="stylesheet" href="../frontend/css/style.css">
+
+    <link rel="stylesheet" href="../frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../frontend/css/owl.theme.default.min.css">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@fundaofwebit">
+    <meta name="twitter:title" content="Laravel Form Validation Tutorial with example | All about Validation in Laravel 10
+">
+    <meta name="twitter:description" content="Laravel Form Validation Tutorial with example | All about Validation in Laravel 10, HOW TO VALIDATE FORM IN LARAVEL, how to do form validation in laravel 10, laravel form validation step by step, form request validation in laravel, laravel validation
+">
+    <meta name="twitter:image" content="../frontend/images/logo.png">
+    
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Funda Of Web IT",
+        "url": "https://www.fundaofwebit.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.fundaofwebit.com/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+     
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": "Laravel Form Validation Tutorial with example | All about Validation in Laravel 10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.fundaofwebit.com/post/laravel-form-validation-tutorial-with-example"
+      },
+      "datePublished": "2023-12-02",
+      "dateModified": "2023-12-13",
+      "author": {
+        "@type": "Person",
+        "name": "Ved Prakash N",
+        "url": "https://www.linkedin.com/in/ved-prakash-n-2ab634167/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Funda Of Web IT",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fundaofwebit.com/frontend/images/logo.png"
+        }
+      }
+    }
+</script>
+
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177236605-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-177236605-1');
+    </script>
+
+</head>
+<body>
+
+    <div class="shadow-sm border-bottom sticky-top">
+    <div class="top-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none d-md-block">
+                    <a href="javascript:void(0)" class="top-nav-link">Follow Us:</a>
+                    <a href="https://www.facebook.com/fundaofwebit" class="top-nav-link br-r">Facebook</a>
+                    <a href="https://www.instagram.com/funda_of_web_it/" class="top-nav-link">Instagram</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a class="top-nav-link br-r" href="https://www.fundacodester.com/collections" target="_blank">Download Source Code</a>
+                    <a class="top-nav-link" href="https://www.fundaofwebit.com/youtube">My YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container -fluid">
+
+            <a class="navbar-brand" href="https://www.fundaofwebit.com/">
+                <img src="../frontend/images/logo.png" class="nav-logo" alt="Funda of Web IT" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PHP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php">PHP Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-solutions">PHP Solutions</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-firebase">PHP Firebase</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-oop">PHP OOP CRUD Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-pdo">PHP PDO Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Laravel
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-tips">Laravel Tips</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-5-8">Laravel 5.8 Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-8">Laravel 8 Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Python
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/python">Python Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/django">Django Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/selenium-python-tutorial">Selenium Python Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/programming-in-java">Java Programs</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-programs">PHP Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/sql">SQL Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/jquery">jQuery Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/git">Git Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/posts">Posts</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="btn1-outline" href="https://www.fundaofwebit.com/courses">Free Courses</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+    <div id="app">
+
+        
+        <main>
+            
+
+<div class="section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <div class="bg-white shadow-sm p-3">
+
+                    <h1 class="text-primary1 my-3 fs-28 fw-bold">Laravel Form Validation Tutorial with example | All about Validation in Laravel 10</h1>
+
+                    <div class="py-2 px-2 fs-12 bg-blue-grad text-white rounded-2">
+                        <span class="mx-2">By Ved Prakash N </span> |
+                        <span class="mx-2"><i class="fa fa-calendar"></i> Dec 02, 2023</span> |
+                        <span class="mx-2">Laravel</span>
+                    </div>
+
+                    <div class="mb-1">
+                        <span class="fs-14">
+                                                        Share :
+                            <a href="https://api.whatsapp.com/send?text=*Laravel%20Form%20Validation%20Tutorial%20with%20example%20|%20All%20about%20Validation%20in%20Laravel%2010*%0A%0Ahttps://www.fundaofwebit.com/post/laravel-form-validation-tutorial-with-example" class="px-2 fs-14 text-decoration-underline"><i class="fa fa-whatsapp font-weight-bold"></i> Whatsapp</a>
+                            <p class="p140 d-none">https://www.fundaofwebit.com/post/laravel-form-validation-tutorial-with-example</p>
+                            <button onclick="copyToClipboard('.p140')" class="px-2 fs-14 btn btn-link text-decoration-underline">Copy Link</button>
+                        </span>
+                    </div>
+
+                    <div class="main-heading">
+
+                                                <div>
+                            <iframe class="w-100" height="450" src="https://www.youtube.com/embed/TvK1JgwSVhA?si=FNiZC7LmadgsRijv" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        
+                    </div>
+
+                    <div class="description py-3">
+                        <h3>Laravel Form Validation Tutorial with example step by step.</h3><p><br></p><p>In this post, we will be learning all about Laravel Form Validation. There are many methods to do validations in Laravel.&nbsp;</p><p>This form validation happens on the FORM Submit in Laravel and all the validation codes are written in Controller.</p><p>Let's get started.</p><h4><b>1. Create Validation</b></h4><p><b>Example 1:</b>To create Validation&nbsp;Rule write inside controller</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #dcdcaa;">validate</span>([</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'required|max:255'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'product_code'</span> =&gt; <span style="color: #ce9178;">'required|max:255'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #ce9178;">'required|decimal:2'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span> =&gt; <span style="color: #ce9178;">'required|integer'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> =&gt; <span style="color: #ce9178;">'sometimes|boolean'</span>,</div><div>]);</div></div><p><br></p><p><b>Example 2:</b>&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">To create Validation Rule write inside controller</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #dcdcaa;">validate</span>([</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'max:255'</span>],</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'product_code'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'max:255'</span>],</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'required'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'decimal:2'</span></div><div>&nbsp; &nbsp; ],</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'integer'</span>],</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> =&gt; <span style="color: #ce9178;">'sometimes|boolean'</span>,</div><div>]);</div></div><p><br></p><p><span style="font-weight: bolder;">Example 3:</span>&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">Make Validation with</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;a&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align); font-weight: bolder;">Customized Error Message</span></p><p>Write the custom message with the Validation inside the controller.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #dcdcaa;">validate</span>([</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'required|max:255'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'product_code'</span> =&gt; <span style="color: #ce9178;">'required|max:255'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #ce9178;">'required|numeric'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span> =&gt; <span style="color: #ce9178;">'required|integer'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> =&gt; <span style="color: #ce9178;">'sometimes|boolean'</span>,</div><div>], [</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'name.required'</span> =&gt; <span style="color: #ce9178;">'The name field is required.'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'name.max'</span> =&gt; <span style="color: #ce9178;">'The name must not exceed 255 characters.'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'product_code.required'</span> =&gt; <span style="color: #ce9178;">'The product code field is required.'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'product_code.max'</span> =&gt; <span style="color: #ce9178;">'The product code must not exceed 255 characters.'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'price.required'</span> =&gt; <span style="color: #ce9178;">'The price field is required.'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'price.numeric'</span> =&gt; <span style="color: #ce9178;">'The price must be a number.'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'stock.required'</span> =&gt; <span style="color: #ce9178;">'The stock field is required.'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'stock.integer'</span> =&gt; <span style="color: #ce9178;">'The stock must be an integer.'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'is_active.boolean'</span> =&gt; <span style="color: #ce9178;">'The is active field must be a boolean value.'</span>,</div><div>]);</div></div><p><br></p><h4><b>2.&nbsp;Create Validation Using Validator Facade</b></h4><p>Write the validation using the <b>"Validator Facade"</b> inside the Laravel Controller.</p><p><b>Example 1:</b> Make Validation with Validator Facade</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">use</span> Illuminate\Support\Facades\<span style="color: #4ec9b0;">Validator</span>;</div><br><div><span style="color: #9cdcfe;">$</span><span style="color: rgb(156, 220, 254);">validator </span>= <span style="color: #4ec9b0;">Validator</span>::<span style="color: #dcdcaa;">make</span>(<span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #dcdcaa;">all</span>(), [</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'required|max:255'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'product_code'</span> =&gt; <span style="color: #ce9178;">'required|max:255'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #ce9178;">'required|numeric'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span> =&gt; <span style="color: #ce9178;">'required|integer'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> =&gt; <span style="color: #ce9178;">'sometimes|boolean'</span>,</div><div>]);</div><br><div><span style="color: #c586c0;">if</span>(<span style="color: #9cdcfe;">$</span><span style="color: rgb(156, 220, 254);">validator</span>-&gt;<span style="color: #dcdcaa;">fails</span>()){</div><br><div>&nbsp; <span style="color: #c586c0;">return</span> <span style="color: #dcdcaa;">redirect</span>()-&gt;<span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">back</span><span style="text-align: var(--bs-body-text-align);">()</span><span style="text-align: var(--bs-body-text-align);">-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">withErrors</span><span style="text-align: var(--bs-body-text-align);">(</span><span style="text-align: var(--bs-body-text-align); color: rgb(156, 220, 254);">$</span><span style="text-align: var(--bs-body-text-align); color: rgb(156, 220, 254);">validator</span><span style="text-align: var(--bs-body-text-align);">-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">errors</span><span style="text-align: var(--bs-body-text-align);">())-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">withInput</span><span style="text-align: var(--bs-body-text-align);">();</span></div><div>}</div></div><p><br></p><p><b>Example 2:&nbsp;</b><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Make Validation with Validator Facade</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">use</span> Illuminate\Support\Facades\<span style="color: #4ec9b0;">Validator</span>;</div><br><div><span style="color: #9cdcfe;">$</span><span style="color: rgb(156, 220, 254);">validator</span> = <span style="color: #4ec9b0;">Validator</span>::<span style="color: #dcdcaa;">make</span>(<span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #dcdcaa;">all</span>(), [</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'max:255'</span>],</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'product_code'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'max:255'</span>],</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'numeric'</span>],</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'integer'</span>],</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> =&gt; <span style="color: #ce9178;">'sometimes|boolean'</span>,</div><div>]);</div><br><div><span style="color: #c586c0;">if</span>(<span style="color: #9cdcfe;">$</span><span style="color: rgb(156, 220, 254);">validator</span>-&gt;<span style="color: #dcdcaa;">fails</span>()){</div><br><div>&nbsp; <span style="color: #c586c0;">return</span> <span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">redirect</span><span style="text-align: var(--bs-body-text-align);">()-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">back</span><span style="text-align: var(--bs-body-text-align);">()-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">withErrors</span><span style="text-align: var(--bs-body-text-align);">(</span><span style="text-align: var(--bs-body-text-align); color: rgb(156, 220, 254);">$</span><span style="text-align: var(--bs-body-text-align); color: rgb(156, 220, 254);">validator</span><span style="text-align: var(--bs-body-text-align);">)-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">withInput</span><span style="text-align: var(--bs-body-text-align);">();</span></div><div>}</div></div><p><br></p><p><b>Example 3:&nbsp;</b><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Make Validation with <b>Customized Error Message</b> using Validator Facade</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">use</span> Illuminate\Support\Facades\<span style="color: #4ec9b0;">Validator</span>;</div><br><div><span style="color: #9cdcfe;">$validator</span> = <span style="color: #4ec9b0;">Validator</span>::<span style="color: #dcdcaa;">make</span>(<span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #dcdcaa;">all</span>(), [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'max:255'</span>],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'product_code'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'max:255'</span>],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'numeric'</span>],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span> =&gt; [<span style="color: #ce9178;">'required'</span>,<span style="color: #ce9178;">'integer'</span>],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> =&gt; <span style="color: #ce9178;">'nullable|boolean'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],[</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name.required'</span> =&gt; <span style="color: #ce9178;">'The name field is required.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name.max'</span> =&gt; <span style="color: #ce9178;">'The name must not exceed 255 characters.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'product_code.required'</span> =&gt; <span style="color: #ce9178;">'The product code field is required.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'product_code.max'</span> =&gt; <span style="color: #ce9178;">'The product code must not exceed 255 characters.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price.required'</span> =&gt; <span style="color: #ce9178;">'The price field is required.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price.numeric'</span> =&gt; <span style="color: #ce9178;">'The price must be a number.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'stock.required'</span> =&gt; <span style="color: #ce9178;">'The stock field is required.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'stock.integer'</span> =&gt; <span style="color: #ce9178;">'The stock must be an integer.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active.boolean'</span> =&gt; <span style="color: #ce9178;">'The is active field must be a boolean value.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ]);</div><br><div><span style="color: #c586c0;">if</span>(<span style="color: #9cdcfe;">$</span><span style="color: rgb(156, 220, 254);">validator</span>-&gt;<span style="color: #dcdcaa;">fails</span>()){</div><br><div>&nbsp; <span style="color: #c586c0;">return</span> <span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">redirect</span><span style="text-align: var(--bs-body-text-align);">()-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">back</span><span style="text-align: var(--bs-body-text-align);">()-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">withErrors</span><span style="text-align: var(--bs-body-text-align);">(</span><span style="text-align: var(--bs-body-text-align); color: rgb(156, 220, 254);">$</span><span style="text-align: var(--bs-body-text-align); color: rgb(156, 220, 254);">validator</span><span style="text-align: var(--bs-body-text-align);">)-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">withInput</span><span style="text-align: var(--bs-body-text-align);">();</span></div><div>}</div></div><p><br></p><h4><b>3. Displaying The Validation Errors</b></h4><p>You can write the below code in the blade files as shown below:</p><p><b>Example 1:</b> Using foreach loop show all messages.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">@if </span>(<span style="color: #9cdcfe;">$errors</span>-&gt;<span style="color: #dcdcaa;">any</span>())</div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"alert alert-danger"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">ul</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">@foreach </span>(<span style="color: #9cdcfe;">$errors</span>-&gt;<span style="color: #dcdcaa;">all</span>() as <span style="color: #9cdcfe;">$error</span>)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">li</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$error</span> <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">li</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">@endforeach</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">ul</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #569cd6;">@endif</span></div></div><p><br></p><p><b>Example 2: </b>Show each field error message.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">@error</span>(<span style="color: #ce9178;">'name'</span>) <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">span</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"text-danger"</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span><span style="color: #9cdcfe;">$message</span><span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">span</span><span style="color: #808080;">&gt;</span> <span style="color: #569cd6;">@enderror</span></div><br><div><span style="color: #569cd6;">@error</span>(<span style="color: #ce9178;">'product_code'</span>) <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">span</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"text-danger"</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span><span style="color: #9cdcfe;">$message</span><span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">span</span><span style="color: #808080;">&gt;</span> <span style="color: #569cd6;">@enderror</span></div><br><div><span style="color: #569cd6;">@error</span>(<span style="color: #ce9178;">'price'</span>) <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">span</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"text-danger"</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span><span style="color: #9cdcfe;">$message</span><span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">span</span><span style="color: #808080;">&gt;</span> <span style="color: #569cd6;">@enderror</span></div><br></div><p><br></p><h4><b>4. Form Request Validation in Laravel</b></h4><p><b>Step 1:</b> Creating Form Requests using <b>make:request</b>&nbsp;Artisan CLI Command as follows:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:request ProductFormRequest</div><p>This will create a new file inside <b>App\Http\Requests </b>folder named as ProductFormRequest.<br></p><p><b>Step 2: </b>Open the Form Request file in following path : <b>app/ Http/ Requests/ ProductFormRequest.php</b> and paste the below code</p><p>In this form request validation file, the <b>authorize()</b> method is to set to "true" and in the <b>rules() </b>method the validation logic. </p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Http\Requests</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Foundation\Http\<span style="color: #4ec9b0;">FormRequest</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">ProductFormRequest</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">FormRequest</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Determine if the user is authorized to make this request.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">authorize</span>(): <span style="color: #569cd6;">bool</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #569cd6;">true</span>;</div><div>&nbsp; &nbsp; }</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Get the validation rules that apply to the request.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* </span><span style="color: #569cd6;">@return</span><span style="color: #6a9955;"> </span><span style="color: #569cd6;">array</span><span style="color: #6a9955;">&lt;</span><span style="color: #569cd6;">string</span><span style="color: #6a9955;">, \Illuminate\Contracts\Validation\ValidationRule|array&lt;mixed&gt;|string&gt;</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">rules</span>(): <span style="color: #569cd6;">array</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'required'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'max:255'</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'product_code'</span> =&gt; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'required'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'max:255'</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'required'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'nemuric'</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span> =&gt; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'required'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'integer'</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> =&gt; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'nullable'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'boolean'</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; ];</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><br></p><p><b>STEP 3:&nbsp;Customizing The Error Messages</b></p><p>Now Let's add the custom error message in the above same <b>ProductFormRequest.php</b> file.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Http\Requests</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Foundation\Http\<span style="color: #4ec9b0;">FormRequest</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">ProductFormRequest</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">FormRequest</span></div><div>{</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">//... your existing rules</span></div><div>&nbsp; &nbsp; <span style="color: #6a9955;">//... your existing rules</span></div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Get the error messages for the defined validation rules.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* </span><span style="color: #569cd6;">@return</span><span style="color: #6a9955;"> </span><span style="color: #569cd6;">array</span><span style="color: #6a9955;">&lt;</span><span style="color: #569cd6;">string</span><span style="color: #6a9955;">, string&gt;</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">messages</span>(): <span style="color: #569cd6;">array</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name.required'</span> =&gt; <span style="color: #ce9178;">'The name field is required.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name.max'</span> =&gt; <span style="color: #ce9178;">'The name must not exceed 255 characters.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'product_code.required'</span> =&gt; <span style="color: #ce9178;">'The product code field is required.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'product_code.max'</span> =&gt; <span style="color: #ce9178;">'The product code must not exceed 255 characters.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price.required'</span> =&gt; <span style="color: #ce9178;">'The price field is required.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price.numeric'</span> =&gt; <span style="color: #ce9178;">'The price must be a number.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'stock.required'</span> =&gt; <span style="color: #ce9178;">'The stock field is required.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'stock.integer'</span> =&gt; <span style="color: #ce9178;">'The stock must be an integer.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active.boolean'</span> =&gt; <span style="color: #ce9178;">'The is active field must be a boolean value.'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; ];</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><br></p><p><b>STEP 4:&nbsp;Preparing Input For Validation</b></p><p>If you need to prepare or sanitize any data from the request before you apply your validation rules, you may use the <b>prepareForValidation</b> method.</p><p>In this&nbsp;<span style="font-weight: bolder; background-color: transparent; text-align: var(--bs-body-text-align);">prepareForValidation()</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;method, I have shown an example of a product slug where we get the <b>"Product Name" ($this-&gt;name) </b>and make it a slug using <b>Str::slug()</b> method and merge the <b>"slug"</b> with FormRequest using <b>merge()</b> function.</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Http\Requests</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Foundation\Http\<span style="color: #4ec9b0;">FormRequest</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Support\<span style="color: #4ec9b0;">Str</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">ProductFormRequest</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">FormRequest</span></div><div>{</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">//... your existing code</span></div><div>&nbsp; &nbsp; <span style="color: #6a9955;">//... your existing code</span></div><div>&nbsp; &nbsp; <span style="color: #6a9955;">//... your existing code</span></div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Prepare the data for validation.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">protected</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">prepareForValidation</span>(): <span style="color: #569cd6;">void</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">$this</span>-&gt;<span style="color: #dcdcaa;">merge</span>([</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'slug'</span> =&gt; <span style="color: #4ec9b0;">Str</span>::<span style="color: #dcdcaa;">slug</span>(<span style="text-align: var(--bs-body-text-align); color: rgb(86, 156, 214);">$this</span><span style="text-align: var(--bs-body-text-align);">-&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(156, 220, 254);">name</span><span style="text-align: var(--bs-body-text-align);">),</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; ]);</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><br></p><p><b>I hope this helps you. Thanks for reading.</b><br></p>
+                    </div>
+
+                    <div class="full-block-ads border m-2 p-1 text-center w-100">
+                        
+                        <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-blue -grad">
+                        <h4 class="text-white mb-0">Latest Posts</h4>
+                    </div>
+                    <div class="card-body">
+                                                <div class="lp-title"><a href="laravel-policy-using-spatie-roles-and-permission-tutorial-step-by-step.html">> Laravel Policy using Spatie Roles &amp; Permission Tutorial step by step</a></div>
+                                                <div class="lp-title"><a href="laravel-10-authorization-policy-tutorial-step-by-step-with-example.html">> Laravel 10 Authorization Policy Tutorial step by step | All about Laravel Policy</a></div>
+                                                <div class="lp-title"><a href="multi-guard-authentication-with-breeze-in-laravel-10.html">> Multi Guard Authentication with Breeze in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-spatie-user-roles-and-permissions-tutorial.html">> Laravel 10 Spatie User Roles and Permissions Tutorial</a></div>
+                                                <div class="lp-title"><a href="how-to-make-pagination-in-laravel.html">> How to make pagination in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-export-data-to-excel-file-with-different-format-in-laravel-10.html">> How to Export data to Excel file with different format/extension in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-import-excel-file-data-into-database-in-laravel.html">> How to Import Excel file data into database in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-multiple-image-upload-with-example.html">> Laravel 10 Multiple Image Upload with Example</a></div>
+                                                <div class="lp-title"><a href="ocr-integration-in-laravel-using-laraocr-package-with-tesseract.html">> OCR Integration in Laravel using LaraOCR Package with Tesseract</a></div>
+                                                <div class="lp-title"><a href="laravel-10-crud-with-image-upload-tutorial-with-example.html">> Laravel 10 CRUD with File / Image Upload Tutorial with Example</a></div>
+                                                <div class="lp-title"><a href="laravel-10-api-authentication-using-laravel-sanctum.html">> Laravel 10 - API Authentication using Laravel Sanctum</a></div>
+                                                <div class="lp-title"><a href="different-ways-to-store-data-in-laravel-10.html">> Different Ways to store data in laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-form-validation-tutorial-with-example.html">> Laravel Form Validation Tutorial with example | All about Validation in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-eloquent-model-tutorial-with-example.html">> Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-migrations-tutorial-with-example.html">> Laravel Migrations Tutorial with example | All about Migrations Guide in laravel</a></div>
+                                                <div class="lp-title"><a href="laravel-blade-components-tutorial-with-example-all-about-components-in-laravel.html">> Laravel Blade Components Tutorial with example - All about components in laravel</a></div>
+                                            </div>
+                </div>
+
+                <div class="border p-2 sticky-1">
+
+                    <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-verticle-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="3613281146"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<section class="footer-section-area">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 mt-3">
+                    <h3 class="fw-bold text-white">Funda of Web IT</h3>
+                    <p class="text-white">
+                        2018 - 2023 ©
+                        <a href="https://fundaofwebit.com/" target="_blank" class="text-white font-weight-bold">Funda of Web IT</a>.
+                        All rights reserved.
+                    </p>
+
+                    <p class="footer-nav-link">
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Funda Codester</a> |
+                        <a href="http://blog.fundaofwebit.com/" target="_blank">About Us</a> |
+                        <a href="https://www.fundaofwebit.com/posts">Posts</a> |
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Download Project Source Code</a>
+                    </p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="fw-bold text-white">Stay Connected</h3>
+                    <ul class="footer-icon-social">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.twitter.com/funda_of_web_it" target="_blank" class="social-link">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.instagram.com/funda_of_web_it/" target="_blank" class="social-link">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.youtube.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="../frontend/js/jquery-3.6.0.min.js"></script>
+    <script src="../frontend/js/bootstrap5.bundle.min.js"></script>
+    <script src="../frontend/js/owl.carousel.js"></script>
+    <script src="../frontend/js/custom.js"></script>
+
+
+    <script>
+        setInterval(function() {
+            window.location.reload();
+        }, 1500000);
+    </script>
+
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            alert("Copied Successfully");
+            $temp.remove();
+        }
+    </script>
+
+    
+</body>
+
+<!-- Mirrored from www.fundaofwebit.com/post/laravel-form-validation-tutorial-with-example by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 13:07:09 GMT -->
+</html>

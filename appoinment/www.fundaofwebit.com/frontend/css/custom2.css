@@ -1,0 +1,503 @@
+.bcani{
+    background: linear-gradient(-45deg, #9a20d9, #119d3b, #cd0f0f, #3f0fd3);
+    background-size: 400% 400%;
+    animation: gradient 2s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.slider-banner{
+    /*background-image: url(../images/slider-1.jpg);*/
+    background: linear-gradient(45deg, #f70000, #7131eff2);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.fw{
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    width: fit-content;
+    min-width: 100%;
+    background-color: #212121 !important;
+}
+.card-body-3{
+    background: #000046; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000046, #1cb5e0); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000046, #1cb5e0);
+    border-radius: 15px;
+    padding: 26px;
+    color: #fff;
+    box-shadow: 5px 3px 21px 5px #555;
+}
+.card-body-3 p{
+    font-size: 14px;
+}
+.card-body-3 .card-3-heading{
+    font-size: 22px;
+    font-weight: 800;
+}
+.lp-description{
+    max-height: 70px;
+    overflow: hidden;
+    font-size: 13px !important;
+}
+.lp-description p{
+    font-size: 13px !important;
+}
+.card-body-2{
+    /* border: 1px solid #fff; */
+    border-radius: 15px;
+    box-shadow: 3px 3px 9px 3px #555;
+    background-image: linear-gradient(to right, #c4aeae, #000000);
+    padding: 26px;
+    color: #fff;
+}
+.card-body-2 .card-2-heading{
+    font-size: 22px;
+    font-weight: 800;
+}
+.card-body-2 p{
+    font-size: 14px;
+}
+.underline{
+    height: 03px;
+    width: 60px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.global-heading{
+    font-size: 1.75rem;
+    font-weight: 800 !important;
+    color: #0d1033;
+    margin-bottom: 16px;
+}
+
+
+.funda-yt{
+    color: #fff;
+    font-size: 54px;
+    margin-bottom: 16px;
+}
+.youtube-heading{
+    height: 34px;
+    overflow: hidden;
+}
+.youtube-heading h5{
+    font-size: 15px;
+    font-weight: 800;
+}
+
+/* Slider Content */
+.carousel-caption {
+    /* text-align: left !important; */
+    top: 21%;
+    bottom: 0;
+    right: 11%;
+    left: 11%;
+}
+.slider-heading1 {
+    font-size: 22px;
+    color: #f1ff00;
+    margin-bottom: 20px;
+}
+.slider-heading2 {
+    font-size: 45px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.slider-para {
+    font-size: 20px;
+    line-height: 28px;
+    color: #fff !important;
+    margin-bottom: 10px;
+}
+.my-btn {
+    padding: 5px 16px;
+    border-radius: 7px;
+    font-size: 14px;
+    box-shadow: 0px 0px 5px 0px #e71212 ;
+    color: #fff !important;
+    background-color: #e71212;
+}
+/* Slider Content */
+
+
+/* Dropdown */
+/*
+.dropdown>.dropdown-menu {
+    transition: 3s all ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin: 0px !important;
+    padding: 0px 0 !important;
+    border: 0;
+    border-radius: 0px;
+    border-top: 4px solid #e71212;
+}
+.navbar .dropdown-menu a {
+    font-size: 13px !important;
+    font-weight: 100;
+    line-height: 120%;
+    padding: 15px 77px 15px 29px;
+    color: #111;
+    border-bottom: 1px solid #b8bbd4a6;
+    overflow: inherit !important;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    top: 100%;
+    transition: 0.3s all ease;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #fff !important;
+    text-decoration: none;
+    background-color: #e71212;
+    transition: 0.3s all ease;
+} */
+/* Dropdown */
+
+
+/* .navbar-nav .nav-item{
+    padding: 5px 10px;
+    border-left: 1px solid #ddd;
+}
+.nav-link{
+    font-size: 15px !important;
+    color: #fff !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+} */
+/* .bg-blue{
+    background-color: #0d1033 !important;
+} */
+.funda-sidemenu{
+    background-color: #E7E9EB;
+    width: 100%;
+}
+.bg-f2f2f2{
+    background-color: #f2f2f2;
+}
+.latest-posts{
+    padding: 10px;
+    background-color: aquamarine;
+}
+.latest-posts a{
+    font-size: 14px;
+    color: blue;
+    display: block;
+    margin: 10px 3px;
+}
+.latest-posts h5{
+    background-color: #0d1033;
+    color: #fff !important;
+    padding: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+.funda-sidemenu a{
+    padding: 8px 14px;
+    display: block;
+    color: #0d1033;
+    font-size: 15px;
+    font-weight: 100;
+    border-bottom: 0.1px solid #0d1033;
+}
+.main-heading h1{
+    font-size: 28px;
+    font-weight: 800;
+    padding-top: 8px;
+    padding-left: 23px;
+    border-left: 5px solid red;
+    padding-bottom: 8px;
+    /* border-bottom: 1px solid #ddd; */
+    /* border-top: 1px solid #ddd; */
+    margin-top: 14px;
+    margin-bottom: 14px;
+    background-color: #f2f2f2;
+    line-height: 1.5;
+}
+.main-heading label{
+     font-size: 16px;
+}
+.description{
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+.description::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+    background-color: #F5F5F5;
+}
+.description::-webkit-scrollbar {
+    width: 0px;
+    height: 10px;
+    background-color: #F5F5F5;
+}
+.description::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
+}
+.f-12{
+    font-size: 14px;
+}
+.f-18{
+    font-size: 18px;
+}
+.section{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.undeline{
+    background-color: red;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 10px;
+}
+.bg-f2f2f2{
+    background-color: #f2f2f2;
+}
+.bg-red{
+    background-color: #e71212 !important;
+}
+.f-16{
+    font-size: 16px;
+}
+.f-14{
+    font-size: 14px;
+}
+.f-20{
+    font-size: 20px;
+}
+.mycard{
+    background-color: #fff;
+    border-radius: 5px;
+}
+.follow-me{
+    border: 1px solid;
+    border-color: #111;
+    border-radius: 50px;
+    font-size: 26px;
+    padding: 24px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 10px;
+    color: #e71212;
+}
+.follow-me:hover{
+    background-color: #e71212;
+    color: #fff;
+    border: 1px solid;
+}
+.bg-myb{
+    background-color: #2c1b1b;
+
+}
+
+.navbar-brand{
+    margin-left: 0px !important;
+}
+.navbar{
+    padding: 0rem 7rem !important;
+
+}
+
+/*24-09-2020 naya wala*/
+
+/* .vertical-menu {
+    width: 200px;
+} */
+
+/* .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 16%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+} */
+
+.funda-bg{
+    width: fit-content;
+    min-width: 100%;
+    background-color: #212121 !important;
+    width: 100% !important;
+    overflow-x: scroll !important;
+}
+
+  /* Sidebar links */
+  /* .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  } */
+
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  .si-sticky {
+    position: fixed;
+    top: 30%;
+    right: 5px;
+    width: 36px;
+    z-index: 1100;
+}
+
+  .social-icon {
+    margin: 0 5px 5px 0;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 38px !important;
+    color: #555;
+    display: block;
+    text-shadow: none;
+    /* background-color: black !important; */
+    border: 1px solid #AAA;
+    border-radius: 3px;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.mystickyside {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 133px;
+}
+.fixme{
+    z-index: 0 !important;
+}
+.main-heading {
+    color: #0d1033;
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 0;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+.underline {
+    background-color: red;
+    width: 6rem;
+    height: 4px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+.bg-round-img {
+    background-image: url(../images/footer-bg.png);
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    padding-bottom: 26px;
+    background-position: left;
+}
+.founder-section img {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    padding: 8px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    /* .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    } */
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;
+    }
+}
+
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+
+
+
+@media only screen and (max-width: 640px) {
+
+    .navbar {
+        padding: 0rem 0rem !important;
+    }
+    .slider-heading1 {
+        font-size: 12px;
+        margin-bottom: 06px;
+    }
+    .slider-heading2 {
+        font-size: 14px;
+        margin-bottom: 06px;
+    }
+    .slider-para {
+        display: none;
+    }
+    .carousel-caption {
+        top: -7%;
+    }
+    .slider-banner{
+        padding-top: 2rem;
+        padding-bottom: 0rem;
+    }
+    .main-menu-navbar .navbar-nav .nav-item{
+        padding: 0px 10px !important;
+        border-left: 0px !important;
+        border-bottom: 1px solid #000;
+    }
+    .main-menu-navbar .navbar-nav .nav-item .nav-link{
+        font-weight: 400;
+        color: #000 !important;
+    }
+    .main-menu-navbar{
+        background-color: #fff !important;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        border-top: 1px solid #ddd;
+    }
+    .main-small-logo{
+        width: 150px;
+    }
+}
+
+

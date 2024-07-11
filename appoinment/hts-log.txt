@@ -1,0 +1,14 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sat, 20 Apr 2024 18:27:59 at https://www.fundaofwebit.com/post/doctor-appointment-booking-system-and-hospital-management-in-laravel +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://www.fundaofwebit.com/post/doctor-appointment-booking-system-and-hospital-management-in-laravel -O1 "C:\My Web Sites\appoinment" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+18:28:15	Error: 	"Not Found" (404) at link https://www.fundaofwebit.com/frontend/images/personal-home.jpg (from https://www.fundaofwebit.com/frontend/css/custom.css)
+18:28:15	Error: 	"Not Found" (404) at link https://www.fundaofwebit.com/frontend/images/home1.jpg (from https://www.fundaofwebit.com/frontend/css/custom.css)
+18:28:15	Error: 	"Not Found" (404) at link https://www.fundaofwebit.com/frontend/css/owl.video.play.png (from https://www.fundaofwebit.com/frontend/css/owl.carousel.min.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 16 seconds : 39 links scanned, 35 files written (3222812 bytes overall) [1615670 bytes received at 100979 bytes/sec], 2366419 bytes transferred using HTTP compression in 33 files, ratio 29%, 7.8 requests per connection
+(3 errors, 0 warnings, 0 messages)

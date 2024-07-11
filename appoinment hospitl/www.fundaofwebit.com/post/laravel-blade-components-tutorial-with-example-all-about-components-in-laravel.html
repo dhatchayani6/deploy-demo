@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.fundaofwebit.com/post/laravel-blade-components-tutorial-with-example-all-about-components-in-laravel by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 13:07:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="rVZ8bdiddqfHO5FFhCi72qjLPn2iRvdlVcago1f1">
+
+    <title>Laravel Blade Components Tutorial with example - All about components in laravel
+</title>
+
+    <meta name="keywords" content="Laravel Blade Components Tutorial with example - All about components in laravel, Laravel Components Tutorial with Examples, Laravel: Blade Components, laravel 10 blade component tutorial step by step, what is components in laravel blade
+">
+    <meta name="description" content="Laravel Blade Components Tutorial with example - All about components in laravel, Laravel Components Tutorial with Examples, Laravel: Blade Components, laravel 10 blade component tutorial step by step, what is components in laravel blade
+">
+    <meta name="author" content="Funda of Web IT">
+
+    <link rel="canonical" href="laravel-blade-components-tutorial-with-example-all-about-components-in-laravel.html">
+
+    <link rel="shortcut icon" href="../frontend/images/favicon.jpg" type="image/x-icon">
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link href="../../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+   
+
+    <link rel="stylesheet" href="../frontend/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="../frontend/css/custom2.css">
+    <link rel="stylesheet" href="../frontend/css/custom.css">
+    <link rel="stylesheet" href="../frontend/css/style.css">
+
+    <link rel="stylesheet" href="../frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../frontend/css/owl.theme.default.min.css">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@fundaofwebit">
+    <meta name="twitter:title" content="Laravel Blade Components Tutorial with example - All about components in laravel
+">
+    <meta name="twitter:description" content="Laravel Blade Components Tutorial with example - All about components in laravel, Laravel Components Tutorial with Examples, Laravel: Blade Components, laravel 10 blade component tutorial step by step, what is components in laravel blade
+">
+    <meta name="twitter:image" content="../frontend/images/logo.png">
+    
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Funda Of Web IT",
+        "url": "https://www.fundaofwebit.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.fundaofwebit.com/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+     
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": "Laravel Blade Components Tutorial with example - All about components in laravel",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.fundaofwebit.com/post/laravel-blade-components-tutorial-with-example-all-about-components-in-laravel"
+      },
+      "datePublished": "2023-11-25",
+      "dateModified": "2023-11-25",
+      "author": {
+        "@type": "Person",
+        "name": "Ved Prakash N",
+        "url": "https://www.linkedin.com/in/ved-prakash-n-2ab634167/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Funda Of Web IT",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fundaofwebit.com/frontend/images/logo.png"
+        }
+      }
+    }
+</script>
+
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177236605-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-177236605-1');
+    </script>
+
+</head>
+<body>
+
+    <div class="shadow-sm border-bottom sticky-top">
+    <div class="top-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none d-md-block">
+                    <a href="javascript:void(0)" class="top-nav-link">Follow Us:</a>
+                    <a href="https://www.facebook.com/fundaofwebit" class="top-nav-link br-r">Facebook</a>
+                    <a href="https://www.instagram.com/funda_of_web_it/" class="top-nav-link">Instagram</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a class="top-nav-link br-r" href="https://www.fundacodester.com/collections" target="_blank">Download Source Code</a>
+                    <a class="top-nav-link" href="https://www.fundaofwebit.com/youtube">My YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container -fluid">
+
+            <a class="navbar-brand" href="https://www.fundaofwebit.com/">
+                <img src="../frontend/images/logo.png" class="nav-logo" alt="Funda of Web IT" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PHP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php">PHP Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-solutions">PHP Solutions</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-firebase">PHP Firebase</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-oop">PHP OOP CRUD Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-pdo">PHP PDO Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Laravel
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-tips">Laravel Tips</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-5-8">Laravel 5.8 Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-8">Laravel 8 Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Python
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/python">Python Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/django">Django Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/selenium-python-tutorial">Selenium Python Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/programming-in-java">Java Programs</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-programs">PHP Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/sql">SQL Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/jquery">jQuery Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/git">Git Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/posts">Posts</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="btn1-outline" href="https://www.fundaofwebit.com/courses">Free Courses</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+    <div id="app">
+
+        
+        <main>
+            
+
+<div class="section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <div class="bg-white shadow-sm p-3">
+
+                    <h1 class="text-primary1 my-3 fs-28 fw-bold">Laravel Blade Components Tutorial with example - All about components in laravel</h1>
+
+                    <div class="py-2 px-2 fs-12 bg-blue-grad text-white rounded-2">
+                        <span class="mx-2">By Ved Prakash N </span> |
+                        <span class="mx-2"><i class="fa fa-calendar"></i> Nov 25, 2023</span> |
+                        <span class="mx-2">Laravel</span>
+                    </div>
+
+                    <div class="mb-1">
+                        <span class="fs-14">
+                                                        Share :
+                            <a href="https://api.whatsapp.com/send?text=*Laravel%20Blade%20Components%20Tutorial%20with%20example%20-%20All%20about%20components%20in%20laravel*%0A%0Ahttps://www.fundaofwebit.com/post/laravel-blade-components-tutorial-with-example-all-about-components-in-laravel" class="px-2 fs-14 text-decoration-underline"><i class="fa fa-whatsapp font-weight-bold"></i> Whatsapp</a>
+                            <p class="p137 d-none">https://www.fundaofwebit.com/post/laravel-blade-components-tutorial-with-example-all-about-components-in-laravel</p>
+                            <button onclick="copyToClipboard('.p137')" class="px-2 fs-14 btn btn-link text-decoration-underline">Copy Link</button>
+                        </span>
+                    </div>
+
+                    <div class="main-heading">
+
+                                                <div>
+                            <iframe class="w-100" height="450" src="https://www.youtube.com/embed/IzsqMOQDu-I?si=oNbX4SssyW0-9J-_" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        
+                    </div>
+
+                    <div class="description py-3">
+                        <h3>Laravel Blade Components Tutorial with an example - All about components in Laravel 10</h3><p><br></p><p>In this post, we will learn how to use Laravel Blade Components step by step with an example. We will be seeing how to </p><ol><li>Create components</li><li>Render the components</li><li>Passing Data To Components ( as string and variable )</li><li>Component attributes</li><li>Slots</li></ol><p>For a more detailed explanation, please take a look at the video above.<br></p><p><br></p><h4>Create a component in Laravel</h4><p>There are 2 ways to create a component in laravel.&nbsp;</p><ol><li>Class based Component</li><li>Directly create a file as a blade&nbsp;component.</li></ol><h5>1. Class based Component</h5><p><b style="background-color: transparent; text-align: var(--bs-body-text-align);">Step 1: </b><span style="background-color: transparent; text-align: var(--bs-body-text-align);">To create a class based component you can use the Artisan command as follows:</span><br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:component AlertMessage</div><p>This command will create two files:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div>app\View\Components\AlertMessage.php</div><div>resources\views\components\alert-message.blade.php</div></div><p><b><br></b></p><p><b>Step 2:</b> Open The&nbsp;<b>AlertMessage.php </b>class component and it looking&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">like this&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">now:</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\View\Components</span>;</div><br><div><span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">Closure</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Contracts\View\<span style="color: #4ec9b0;">View</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\View\<span style="color: #4ec9b0;">Component</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">AlertMessage</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Component</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Create a new component instance.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">__construct</span>()</div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">//</span></div><div>&nbsp; &nbsp; }</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Get the view / contents that represent the component.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">render</span>(): <span style="color: #4ec9b0;">View</span>|<span style="color: #4ec9b0;">Closure</span>|<span style="color: #569cd6;">string</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #dcdcaa;">view</span>(<span style="color: #ce9178;">'components.alert-message'</span>);</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><b><br></b></p><p><b>Step 3:</b> Open the <b>alert-message.blade.php </b>blade component and it looks like this now:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><br><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Let's add some bootstrap classes to make as an alert box to show messages in the <b>alert-message.blade.php</b> file</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"alert alert-success"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; My Alert Message</div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div><p><br></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>Step 4:</b> You can call your new component by using the </span><b style="background-color: transparent; text-align: var(--bs-body-text-align);">x-name syntax</b><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;as follows:&nbsp;</span><br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-alert-message</span> <span style="color: #808080;">/&gt;</span></div><h5 style="color: rgb(0, 0, 0);"><br></h5><h5 style="color: rgb(0, 0, 0);">2. Create a file as blade Component</h5><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Create a new Blade component file named <b>notification.blade.php</b> in the resources/views/components directory.</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div style="line-height: 19px;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"alert alert-info notification"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; My Noficiation Alert</div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div></div><p>Now, use the <b>notification </b>component in your view: in any blade file.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: rgb(128, 128, 128);">&lt;</span><span style="color: rgb(86, 156, 214);">x-notification </span><span style="color: rgb(128, 128, 128);">/&gt;</span></div><div><span style="color: rgb(128, 128, 128);"><br></span></div><p><b>Let's do an example with the above components. The final goal will be to display a alert message and style that message base on the alert type (error or success). Which is also called as Passing data or message to components.</b></p><p><br></p><h4 style="color: rgb(0, 0, 0);">Passing Data To Components</h4><p>Passing data to components can be done in 2 ways in laravel. </p><ol><li>Class Component</li><li>Directly to Blade Component (using @props).</li></ol><h5>1. Let's start with the "Class Component". </h5><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">As we have already created the </span><b style="background-color: transparent; text-align: var(--bs-body-text-align);">AlertMessage&nbsp;</b><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Component above.</span></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>Step 1:</b> let's open the blade component file named&nbsp;<b>alert-message.blade.php</b> file "</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">resources/ views/ components/ alert-message.blade.php" and paste the below code</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">:</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"alert alert-</span><span style="color: #dcdcaa;">{{</span><span style="color: #ce9178;"> </span><span style="color: #9cdcfe;">$type</span><span style="color: #ce9178;"> </span><span style="color: #dcdcaa;">}}</span><span style="color: #ce9178;">"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$message</span> <span style="color: #dcdcaa;">}}</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><br></span></p><p><span style="font-weight: bolder;">Step 2:&nbsp;</span>Let's open the class component file named&nbsp;<span style="font-weight: bolder;">AlertMessage.php</span>&nbsp;file "app/ View/ Components/ AlertMessage.php" file and paste the below code:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\View\Components</span>;</div><br><div><span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">Closure</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Contracts\View\<span style="color: #4ec9b0;">View</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\View\<span style="color: #4ec9b0;">Component</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">AlertMessage</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Component</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #9cdcfe;">$message</span>;</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">string</span> <span style="color: #9cdcfe;">$type</span>;</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Create a new component instance.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">__construct</span>(<span style="color: #9cdcfe;">$message</span>, <span style="color: #9cdcfe;">$type</span>)</div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">$this</span>-&gt;<span style="color: #9cdcfe;">message</span> = <span style="color: #9cdcfe;">$message</span>;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">$this</span>-&gt;<span style="color: #9cdcfe;">type</span> = <span style="color: #9cdcfe;">$type</span>;</div><div>&nbsp; &nbsp; }</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">/**</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;* Get the view / contents that represent the component.</span></div><div><span style="color: #6a9955;">&nbsp; &nbsp; &nbsp;*/</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">render</span>(): <span style="color: #4ec9b0;">View</span>|<span style="color: #4ec9b0;">Closure</span>|<span style="color: #569cd6;">string</span></div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #dcdcaa;">view</span>(<span style="color: #ce9178;">'components.alert-message'</span>);</div><div>&nbsp; &nbsp; }</div><div>}</div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><br></span></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>Step 3:</b>&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Now, use the <b>alert-message</b> <b>component </b>in your view: ( Eg:&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">example-view.blade.php )<br>:type and :message are data pass to the component<br></span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-alert-message</span> <span style="color: #9cdcfe;">:type</span>=<span style="color: #ce9178;">"</span><span style="color: #9cdcfe;">$type</span><span style="color: #ce9178;">"</span> <span style="color: #9cdcfe;">:message</span>=<span style="color: #ce9178;">"</span><span style="color: #9cdcfe;">$message</span><span style="color: #ce9178;">"</span> <span style="color: #808080;">/&gt;</span></div><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-alert-message</span> <span style="color: #9cdcfe;">type</span>=<span style="color: #ce9178;">"success"</span> <span style="color: #9cdcfe;">message</span>=<span style="color: #ce9178;">"My Alert Message Box"</span> <span style="color: #808080;">/&gt;</span></div><p>That's in the Class Component.</p><p><br></p><h5 style="color: rgb(0, 0, 0);">2. Let's start with the "Blade Component"&nbsp;</h5><p>As we have already created the Notification Blade Component above, we will be using that notification component here.</p><p><b>Step 1:</b>&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">let's open the blade component file named&nbsp;<span style="font-weight: bolder;">notification.blade.php</span>&nbsp;file "</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">resources/ views/ components/ notification.blade.php" and paste the below code</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">:</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">@props</span>([</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'type'</span> =&gt; <span style="color: #ce9178;">'info'</span>,</div><div>&nbsp; &nbsp; <span style="color: #ce9178;">'message'</span></div><div>])</div><br><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"alert alert-</span><span style="color: #dcdcaa;">{{</span><span style="color: #ce9178;"> </span><span style="color: #9cdcfe;">$type</span><span style="color: #ce9178;"> </span><span style="color: #dcdcaa;">}}</span><span style="color: #ce9178;"> notification"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$message</span> <span style="color: #dcdcaa;">}}</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div><p>Here we are not using any class, so instead of class, we are using <b>props</b> in the blade component to access the data.</p><p><span style="text-align: var(--bs-body-text-align); background-color: transparent;"><span style="font-weight: bolder;">Step 2:</span>&nbsp;</span><span style="text-align: var(--bs-body-text-align); background-color: transparent;">Now, use the <b>notification&nbsp;</b><span style="font-weight: bolder;">component&nbsp;</span>in your view: ( Eg:&nbsp;</span><span style="text-align: var(--bs-body-text-align); background-color: transparent;">example-view.blade.php )<br>:type and :message are data pass to the component<br></span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-notification</span> <span style="color: #9cdcfe;">type</span>=<span style="color: #ce9178;">"success"</span> <span style="color: #9cdcfe;">message</span>=<span style="color: #ce9178;">"Success! Your changes have been saved"</span> <span style="color: #808080;">/&gt;</span></div><div><span style="color: #808080;"><br></span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-notification</span> <span style="color: #9cdcfe;">type</span>=<span style="color: #ce9178;">"warning"</span> <span style="color: #9cdcfe;">message</span>=<span style="color: #ce9178;">"Error! Something went wrong"</span> <span style="color: #808080;">/&gt;</span></div><div><span style="color: #808080;"><br></span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-notification</span> <span style="color: #9cdcfe;">:type</span>=<span style="color: #ce9178;">"</span><span style="color: #9cdcfe;">$type</span><span style="color: #ce9178;">"</span> <span style="color: #9cdcfe;">:message</span>=<span style="color: #ce9178;">"</span><span style="color: #9cdcfe;">$message</span><span style="color: #ce9178;">"</span> <span style="color: #808080;">/&gt;</span></div></div><p><br></p><h4 style="color: rgb(0, 0, 0);">Components Attributes</h4><p>Sometimes you may need to specify additional HTML attributes, such as class that are not part of your component data.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-notification</span> <span style="color: #9cdcfe;">type</span>=<span style="color: #ce9178;">"success"</span> <span style="color: #9cdcfe;">message</span>=<span style="color: #ce9178;">"Success!"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"mt-4"</span> <span style="color: #808080;">/&gt;</span></div><p>If you want to pass these additional attributes down to the root element of the component template you can use the $attributes variable.<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$attributes</span> <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&gt;</span></div><br><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">If a <b>class attribute</b> already exists in your <b>div </b>you can use </span><b style="background-color: transparent; text-align: var(--bs-body-text-align);">$attributes-&gt;merge</b><span style="background-color: transparent; text-align: var(--bs-body-text-align);"> to merge both together.</span><br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$attributes</span>-&gt;<span style="color: #dcdcaa;">merge</span>([<span style="color: #ce9178;">'class'</span> =&gt; <span style="color: #ce9178;">'alert alert-'</span>.<span style="color: #9cdcfe;">$type</span>.<span style="color: #ce9178;">' &nbsp; notification'</span>]) <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$message</span> <span style="color: #dcdcaa;">}}</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div><p>you can merge many attributes like below example:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><div style="line-height: 19px;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">button</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #dcdcaa;">{{</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #9cdcfe;">$attributes</span>-&gt;<span style="color: #dcdcaa;">merge</span>([</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'class'</span> =&gt; <span style="color: #ce9178;">'alert alert-'</span>.<span style="color: #9cdcfe;">$type</span>.<span style="color: #ce9178;">' &nbsp; notification',</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'type'</span> =&gt; <span style="color: #ce9178;">'button'</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ])</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #dcdcaa;">}}</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$message</span> <span style="color: #dcdcaa;">}}</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">button</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div></div></div><p><br></p><h4 style="color: rgb(0, 0, 0);">Slots</h4><p>You will often need to pass additional content to your component via <b>"slots"</b>. Component slots are rendered by echoing the $slot variable.<br></p><p>Let's start here with the new example called &lt;label&gt; and pass the content to the component:</p><p><b>Step 1: </b>Create a blade component named <b>label.blade.php</b> in the following directory "resources/ views/ components/ label.blade.php" and paste the below code</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">label</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"fw-bold h6"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$slot</span> <span style="color: #dcdcaa;">}}</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">label</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div><p><br></p><p><b>Step 2:&nbsp;</b>Now, use the <b>label</b>&nbsp;<b>component </b>in your view: in any blade file as given below.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-label</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; My Label - First Name</div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-label</span><span style="color: #808080;">&gt;</span></div></div><p><br></p><p>There is also another way of using slots in Laravel. Let's see how to use them and we will same example as &lt;label&gt;</p><p><b>Step 1: </b>Open the <b>label.blade.php </b>component file in the following folder&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">"resources/ views/ components/ label.blade.php" and paste the below code:</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">label</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"fw-bold h5"</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$mainTitle</span> ?? <span style="color: #ce9178;">''</span> <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">label</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">label</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"fw-bold h6"</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$subTitle</span> ?? <span style="color: #ce9178;">''</span> <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">label</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>Step 2:</b>&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Now, use the</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span><b><span style="background-color: transparent; text-align: var(--bs-body-text-align);">label</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">component</span></b><span style="background-color: transparent; text-align: var(--bs-body-text-align); font-weight: bolder;">&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">in your view: in any blade file as given below.<br></span><b>Note: </b>name attribute value in the x-slot (&lt;x-slot name="mainTitle" is the variable created in your component i.e $mainTitle, both should be same.&nbsp;</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-label</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-slot</span> <span style="color: #9cdcfe;">name</span>=<span style="color: #ce9178;">"mainTitle"</span><span style="color: #808080;">&gt;</span>This is Main Title Data<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-slot</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-slot</span> <span style="color: #9cdcfe;">name</span>=<span style="color: #ce9178;">"subTitle"</span><span style="color: #808080;">&gt;</span>This is a sub title<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-slot</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-label</span><span style="color: #808080;">&gt;</span></div></div><p><br></p><p>That's it developer for Laravel Blade Component concepts.<br>If you want to learn more about the latest Laravel blade component concepts, read the official documentation:&nbsp;<a href="https://laravel.com/docs/10.x/blade" target="_blank">https://laravel.com/docs/10.x/blade</a>&nbsp;&nbsp;</p><p><b>Thanks for reading.</b></p>
+                    </div>
+
+                    <div class="full-block-ads border m-2 p-1 text-center w-100">
+                        
+                        <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-blue -grad">
+                        <h4 class="text-white mb-0">Latest Posts</h4>
+                    </div>
+                    <div class="card-body">
+                                                <div class="lp-title"><a href="laravel-policy-using-spatie-roles-and-permission-tutorial-step-by-step.html">> Laravel Policy using Spatie Roles &amp; Permission Tutorial step by step</a></div>
+                                                <div class="lp-title"><a href="laravel-10-authorization-policy-tutorial-step-by-step-with-example.html">> Laravel 10 Authorization Policy Tutorial step by step | All about Laravel Policy</a></div>
+                                                <div class="lp-title"><a href="multi-guard-authentication-with-breeze-in-laravel-10.html">> Multi Guard Authentication with Breeze in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-spatie-user-roles-and-permissions-tutorial.html">> Laravel 10 Spatie User Roles and Permissions Tutorial</a></div>
+                                                <div class="lp-title"><a href="how-to-make-pagination-in-laravel.html">> How to make pagination in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-export-data-to-excel-file-with-different-format-in-laravel-10.html">> How to Export data to Excel file with different format/extension in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-import-excel-file-data-into-database-in-laravel.html">> How to Import Excel file data into database in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-multiple-image-upload-with-example.html">> Laravel 10 Multiple Image Upload with Example</a></div>
+                                                <div class="lp-title"><a href="ocr-integration-in-laravel-using-laraocr-package-with-tesseract.html">> OCR Integration in Laravel using LaraOCR Package with Tesseract</a></div>
+                                                <div class="lp-title"><a href="laravel-10-crud-with-image-upload-tutorial-with-example.html">> Laravel 10 CRUD with File / Image Upload Tutorial with Example</a></div>
+                                                <div class="lp-title"><a href="laravel-10-api-authentication-using-laravel-sanctum.html">> Laravel 10 - API Authentication using Laravel Sanctum</a></div>
+                                                <div class="lp-title"><a href="different-ways-to-store-data-in-laravel-10.html">> Different Ways to store data in laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-form-validation-tutorial-with-example.html">> Laravel Form Validation Tutorial with example | All about Validation in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-eloquent-model-tutorial-with-example.html">> Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-migrations-tutorial-with-example.html">> Laravel Migrations Tutorial with example | All about Migrations Guide in laravel</a></div>
+                                                <div class="lp-title"><a href="laravel-blade-components-tutorial-with-example-all-about-components-in-laravel.html">> Laravel Blade Components Tutorial with example - All about components in laravel</a></div>
+                                            </div>
+                </div>
+
+                <div class="border p-2 sticky-1">
+
+                    <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-verticle-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="3613281146"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<section class="footer-section-area">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 mt-3">
+                    <h3 class="fw-bold text-white">Funda of Web IT</h3>
+                    <p class="text-white">
+                        2018 - 2023 ©
+                        <a href="https://fundaofwebit.com/" target="_blank" class="text-white font-weight-bold">Funda of Web IT</a>.
+                        All rights reserved.
+                    </p>
+
+                    <p class="footer-nav-link">
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Funda Codester</a> |
+                        <a href="http://blog.fundaofwebit.com/" target="_blank">About Us</a> |
+                        <a href="https://www.fundaofwebit.com/posts">Posts</a> |
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Download Project Source Code</a>
+                    </p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="fw-bold text-white">Stay Connected</h3>
+                    <ul class="footer-icon-social">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.twitter.com/funda_of_web_it" target="_blank" class="social-link">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.instagram.com/funda_of_web_it/" target="_blank" class="social-link">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.youtube.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="../frontend/js/jquery-3.6.0.min.js"></script>
+    <script src="../frontend/js/bootstrap5.bundle.min.js"></script>
+    <script src="../frontend/js/owl.carousel.js"></script>
+    <script src="../frontend/js/custom.js"></script>
+
+
+    <script>
+        setInterval(function() {
+            window.location.reload();
+        }, 1500000);
+    </script>
+
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            alert("Copied Successfully");
+            $temp.remove();
+        }
+    </script>
+
+    
+</body>
+
+<!-- Mirrored from www.fundaofwebit.com/post/laravel-blade-components-tutorial-with-example-all-about-components-in-laravel by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 13:07:09 GMT -->
+</html>

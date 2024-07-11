@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.fundaofwebit.com/post/laravel-eloquent-model-tutorial-with-example by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="fUaTJSZz1w07q1oh0AMmt3R7xeu2B55rbFHVfh8h">
+
+    <title>Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10
+</title>
+
+    <meta name="keywords" content="Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10, laravel model tutorial, all about laravel model step by step tutorial, laravel model tutorial step by step, step by step tutorial in laravel 10
+">
+    <meta name="description" content="Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10, laravel model tutorial, all about laravel model step by step tutorial, laravel model tutorial step by step, step by step tutorial in laravel 10
+">
+    <meta name="author" content="Funda of Web IT">
+
+    <link rel="canonical" href="laravel-eloquent-model-tutorial-with-example.html">
+
+    <link rel="shortcut icon" href="../frontend/images/favicon.jpg" type="image/x-icon">
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link href="../../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+   
+
+    <link rel="stylesheet" href="../frontend/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="../frontend/css/custom2.css">
+    <link rel="stylesheet" href="../frontend/css/custom.css">
+    <link rel="stylesheet" href="../frontend/css/style.css">
+
+    <link rel="stylesheet" href="../frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../frontend/css/owl.theme.default.min.css">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@fundaofwebit">
+    <meta name="twitter:title" content="Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10
+">
+    <meta name="twitter:description" content="Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10, laravel model tutorial, all about laravel model step by step tutorial, laravel model tutorial step by step, step by step tutorial in laravel 10
+">
+    <meta name="twitter:image" content="../frontend/images/logo.png">
+    
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Funda Of Web IT",
+        "url": "https://www.fundaofwebit.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.fundaofwebit.com/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+     
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": "Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.fundaofwebit.com/post/laravel-eloquent-model-tutorial-with-example"
+      },
+      "datePublished": "2023-11-28",
+      "dateModified": "2023-12-03",
+      "author": {
+        "@type": "Person",
+        "name": "Ved Prakash N",
+        "url": "https://www.linkedin.com/in/ved-prakash-n-2ab634167/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Funda Of Web IT",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fundaofwebit.com/frontend/images/logo.png"
+        }
+      }
+    }
+</script>
+
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177236605-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-177236605-1');
+    </script>
+
+</head>
+<body>
+
+    <div class="shadow-sm border-bottom sticky-top">
+    <div class="top-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none d-md-block">
+                    <a href="javascript:void(0)" class="top-nav-link">Follow Us:</a>
+                    <a href="https://www.facebook.com/fundaofwebit" class="top-nav-link br-r">Facebook</a>
+                    <a href="https://www.instagram.com/funda_of_web_it/" class="top-nav-link">Instagram</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a class="top-nav-link br-r" href="https://www.fundacodester.com/collections" target="_blank">Download Source Code</a>
+                    <a class="top-nav-link" href="https://www.fundaofwebit.com/youtube">My YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container -fluid">
+
+            <a class="navbar-brand" href="https://www.fundaofwebit.com/">
+                <img src="../frontend/images/logo.png" class="nav-logo" alt="Funda of Web IT" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PHP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php">PHP Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-solutions">PHP Solutions</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-firebase">PHP Firebase</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-oop">PHP OOP CRUD Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-pdo">PHP PDO Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Laravel
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-tips">Laravel Tips</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-5-8">Laravel 5.8 Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-8">Laravel 8 Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Python
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/python">Python Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/django">Django Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/selenium-python-tutorial">Selenium Python Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/programming-in-java">Java Programs</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-programs">PHP Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/sql">SQL Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/jquery">jQuery Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/git">Git Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/posts">Posts</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="btn1-outline" href="https://www.fundaofwebit.com/courses">Free Courses</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+    <div id="app">
+
+        
+        <main>
+            
+
+<div class="section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <div class="bg-white shadow-sm p-3">
+
+                    <h1 class="text-primary1 my-3 fs-28 fw-bold">Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</h1>
+
+                    <div class="py-2 px-2 fs-12 bg-blue-grad text-white rounded-2">
+                        <span class="mx-2">By Ved Prakash N </span> |
+                        <span class="mx-2"><i class="fa fa-calendar"></i> Nov 28, 2023</span> |
+                        <span class="mx-2">Laravel</span>
+                    </div>
+
+                    <div class="mb-1">
+                        <span class="fs-14">
+                                                        Share :
+                            <a href="https://api.whatsapp.com/send?text=*Laravel%20Eloquent%20Model%20Tutorial%20with%20example%20|%20All%20about%20Models%20in%20Laravel%2010*%0A%0Ahttps://www.fundaofwebit.com/post/laravel-eloquent-model-tutorial-with-example" class="px-2 fs-14 text-decoration-underline"><i class="fa fa-whatsapp font-weight-bold"></i> Whatsapp</a>
+                            <p class="p139 d-none">https://www.fundaofwebit.com/post/laravel-eloquent-model-tutorial-with-example</p>
+                            <button onclick="copyToClipboard('.p139')" class="px-2 fs-14 btn btn-link text-decoration-underline">Copy Link</button>
+                        </span>
+                    </div>
+
+                    <div class="main-heading">
+
+                        
+                    </div>
+
+                    <div class="description py-3">
+                        <h3>Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</h3><p><br></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">A Laravel model represents and interacts with a database table in the application.</span></p><p>Using the Eloquent Model, you can perform many database-related operations such as create, update, read, and delete records. </p><p>Let’s explore the functionalities that can be performed using <b>Laravel Eloquent Model</b>&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">in detail</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">:</span></p><h4>1. Create a Model</h4><p><b>STEP 1:</b> To create a new Model, Run the below command which will generate a new file in the 'app/Models' directory. So let's take an example of Product.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:model Product</div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">After successfully running the artisan command it creates the <b>Model</b> as Product.php</span><br></p><p><b>STEP 2: </b>Open the <b>Product Model</b> in the following path <b>app/Models/Product.php</b> and this is the Structure of the model:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Models</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\Factories\<span style="color: #4ec9b0;">HasFactory</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\<span style="color: #4ec9b0;">Model</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">HasFactory</span>;</div><div>}</div></div><p><br></p><h5>2. Table Name ( $table Property ) : give table name in the Product Model as shown below.</h5><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Models</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\Factories\<span style="color: #4ec9b0;">HasFactory</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\<span style="color: #4ec9b0;">Model</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">HasFactory</span>;</div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">protected</span> <span style="color: #9cdcfe;">$table</span> = <span style="color: #ce9178;">'products'</span>;</div><div>}</div></div><p><br></p><h5 style="color: rgb(0, 0, 0);">3. Table Columns ( $fillable Property<span style="font-size: 1.25rem; background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span>): give table column names in the Product Model as shown below.</h5><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Models</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\Factories\<span style="color: #4ec9b0;">HasFactory</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\<span style="color: #4ec9b0;">Model</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">HasFactory</span>;</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">// ... your existing code</span></div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">protected</span> <span style="color: #9cdcfe;">$fillable</span> = [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'product_code'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'stock'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span></div><div>&nbsp; &nbsp; ];</div><div>}</div></div><p><br></p><h5 style="color: rgb(0, 0, 0);">4. Attribute Casting ( $casts Property<span style="font-size: 1.25rem; background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span>) : give table columns casting in the Product Model as shown below.</h5><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Models</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\Factories\<span style="color: #4ec9b0;">HasFactory</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\<span style="color: #4ec9b0;">Model</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">HasFactory</span>;</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">// ... your existing code</span></div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">protected</span> <span style="color: #9cdcfe;">$casts</span> = [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'start_date'</span> =&gt; <span style="color: #ce9178;">'datetime'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'end_date'</span> &nbsp; =&gt; <span style="color: #ce9178;">'datetime:Y-m-d'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> &nbsp;=&gt; <span style="color: #ce9178;">'boolean'</span>,</div><div>&nbsp; &nbsp; ];</div><div>}</div></div><p><br></p><h5 style="color: rgb(0, 0, 0);">5. Append Attribute ( $appends Property<span style="font-size: 1.25rem; background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span>) : append new attributes to eloquent the Product Model as shown below.</h5><p>Suppose you want to get the Product Name and Product Code together and add this data to as column while getting the data using the Model.</p><p>You can achieve this by using <b>$appends Property </b>and <b>Accessor </b>in Laravel.</p><div><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Models</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\Factories\<span style="color: #4ec9b0;">HasFactory</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\<span style="color: #4ec9b0;">Model</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">HasFactory</span>;</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">// ... your existing code</span></div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">protected</span> <span style="color: #9cdcfe;">$appends</span> = [<span style="color: #ce9178;">'name_code'</span>];</div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">getNameCodeAttribute</span>()</div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #569cd6;">$this</span>-&gt;<span style="color: #9cdcfe;">name</span> . <span style="color: #ce9178;">' '</span> . <span style="color: #569cd6;">$this</span>-&gt;<span style="color: #9cdcfe;">product_code</span>;</div><div>&nbsp; &nbsp; }</div><div>}</div></div></div><div><br></div><h5><br></h5><h5>6. Set Primary Key Column ( $primaryKey Property ) : (If required only)</h5><div><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Models</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\Factories\<span style="color: #4ec9b0;">HasFactory</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\<span style="color: #4ec9b0;">Model</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">HasFactory</span>;</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">// ... your existing code</span></div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">protected</span> <span style="color: #9cdcfe;">$primaryKey</span> = <span style="color: #ce9178;">'id'</span>;</div><div>}</div></div></div><div><br></div><div><h4 style="color: rgb(0, 0, 0);">7. Hidden Attribute ( $hidden Property ) :</h4></div><div>The use of the <b>$hidden</b> property within an Eloquent model offers a powerful way to control the fields that are excluded from the model's JSON form when it's returned in responses.</div><div>By specifying an array of fields like <b>'created_at'</b> and <b>'updated_at'</b> within the <b>$hidden</b> property, these fields are automatically concealed from the retrieved data.</div><div>This code snippet hides the 'created_at' and 'updated_at' fields when retrieving data from the associated model, ensuring they're not included in the output.<br></div><div><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 19.6px; line-height: 26px; white-space: pre;"><div style="font-size: 16.8px; line-height: 22px;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Models</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\Factories\<span style="color: #4ec9b0;">HasFactory</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\<span style="color: #4ec9b0;">Model</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">HasFactory</span>;</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">// ... your existing code</span></div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">protected</span> <span style="color: #9cdcfe;">$hidden</span> = [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'created_at'</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'updated_at'</span></div><div>&nbsp; &nbsp; ];</div><div>}</div></div></div></div><div><br></div><div><br></div><h4>8. Accessors and Mutators</h4><div>accessors and mutators allow you to manipulate the data of an Eloquent model when you retrieve or set values on its attributes.</div><div><br></div><h5><b>Accessors:</b></h5><div>Accessors are used to format or manipulate the data when it is accessed. They are defined by creating a method on the model with the attribute name in camel case followed by the word "Attribute" and prefixing it with 'get'.<br></div><div><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div style="line-height: 19px;"><div><span style="color: #569cd6;">&lt;?php</span></div><br><div><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Models</span>;</div><br><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\Factories\<span style="color: #4ec9b0;">HasFactory</span>;</div><div><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\<span style="color: #4ec9b0;">Model</span>;</div><br><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span></div><div>{</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">HasFactory</span>;</div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">// ... your existing code</span></div><br><div>&nbsp; &nbsp; <span style="color: #6a9955;">// Assume 'name' (product_name) is a column in the products table.</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">getNameAttribute</span>()</div><div>&nbsp; &nbsp; {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #c586c0;">return</span> <span style="color: #dcdcaa;">ucfirst</span>(<span style="color: #569cd6;">$this</span>-&gt;<span style="color: #9cdcfe;">attributes</span>[<span style="color: #ce9178;">'name'</span>]);</div><div>&nbsp; &nbsp; }</div><div>}</div></div></div></div><div>In this example, when you retrieve the <b>name attribute</b>, the <b>getNameAttribute</b> accessor will be automatically called, and it will return the value of <b>name</b> with the first letter <b>capitalized</b>. You can use this <span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>"Accessors"&nbsp;</b>in many ways.</span><br></div><div><br></div><div>Usage:<br></div><div><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #6a9955;">// Using the accessor</span></div><div><span style="color: #9cdcfe;">$product</span> = <span style="color: #4ec9b0;">Product</span>::<span style="color: #dcdcaa;">find</span>(<span style="color: #b5cea8;">1</span>);</div><div><span style="color: #dcdcaa;">echo</span> <span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #9cdcfe;">name</span>; <span style="color: #6a9955;">// Output: Product one</span></div></div></div><div><br></div><h5><b>Mutators:</b></h5><div>Mutators are used to format or manipulate the data before it is saved to the database. They are defined by creating a method on the model with the attribute name in camel case followed by the word "Attribute", and prefixing it with 'set'.<br></div><div><div class="alert funda-bg" style="background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div style="color: rgb(212, 212, 212);"><span style="color: #569cd6;">&lt;?php</span></div><font color="#d4d4d4"><br></font><div style="color: rgb(212, 212, 212);"><span style="color: #569cd6;">namespace</span> <span style="color: #4ec9b0;">App\Models</span>;</div><font color="#d4d4d4"><br></font><div style="color: rgb(212, 212, 212);"><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\Factories\<span style="color: #4ec9b0;">HasFactory</span>;</div><div style="color: rgb(212, 212, 212);"><span style="color: #569cd6;">use</span> Illuminate\Database\Eloquent\<span style="color: #4ec9b0;">Model</span>;</div><div style="color: rgb(212, 212, 212);"><span style="color: #569cd6;">use</span> Illuminate\Support\<span style="color: #4ec9b0;">Str</span>;</div><font color="#d4d4d4"><br></font><div style="color: rgb(212, 212, 212);"><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span></div><div style="color: rgb(212, 212, 212);">{</div><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; <span style="color: #569cd6;">use</span> <span style="color: #4ec9b0;">HasFactory</span>;</div><font color="#d4d4d4"><br></font><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; <span style="color: #569cd6;">protected</span> <span style="color: #9cdcfe;">$fillable</span> = [</div><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span>,</div><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'slug'</span>,</div><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existing column names</span></div><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">// ... your existing column names</span></div><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; ];</div><font color="#d4d4d4"><br></font><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; <span style="color: #6a9955;">// Assume 'slug' is a column in the products table.</span></div><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; <span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: rgb(220, 220, 170); font-size: 16.8px; text-align: var(--bs-body-text-align);">setNameAttribute</span><span style="text-align: var(--bs-body-text-align);">(</span><span style="text-align: var(--bs-body-text-align); color: rgb(156, 220, 254);">$value</span><span style="text-align: var(--bs-body-text-align);">)</span><br></div><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; {</div><div style="color: rgb(212, 212, 212);"><div style="font-size: 15.4px; line-height: 20px;"><div style="font-size: 14px; line-height: 19px;"><span style="color: #569cd6;">        $this</span>-&gt;<span style="color: #9cdcfe;">attributes</span>[<span style="color: #ce9178;">'name'</span>] = <span style="color: #dcdcaa;">strtoupper</span>(<span style="color: #9cdcfe;">$value</span>);</div></div></div><div style=""><font color="#d4d4d4">        </font><span style="color: rgb(86, 156, 214);">$this</span><font color="#d4d4d4">-&gt;</font><span style="color: rgb(156, 220, 254);">attributes</span><font color="#d4d4d4">[</font><span style="color: rgb(206, 145, 120);">'slug'</span><font color="#d4d4d4">] = </font><span style="color: rgb(78, 201, 176);">Str</span><font color="#d4d4d4">::</font><span style="color: rgb(220, 220, 170);">slug</span><font color="#d4d4d4">(</font><span style="color: rgb(156, 220, 254); font-size: 16.8px;">$value</span><font color="#d4d4d4">);</font></div><div style="color: rgb(212, 212, 212);">&nbsp; &nbsp; }</div><div style="color: rgb(212, 212, 212);">}</div></div></div><div>In this example, the '<b>setNameAttribute</b>' mutator will be automatically called before saving the '<b>slug</b>' attribute data to the database and also changing the Product Name to Uppercase. It will generate a slug from the <b>name attribute</b> using Laravel's <b>Str::slug method</b>.<br></div><div><br></div><div>Now, you can use this model as follows:<br></div><div><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #6a9955;">// Example usage</span></div><div><span style="color: #9cdcfe;">$product</span> = <span style="color: #569cd6;">new</span> <span style="color: #4ec9b0;">Product</span>;</div><div><span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #9cdcfe;">name</span> = <span style="color: #ce9178;">'Awesome Product Name'</span>;</div><div><span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #dcdcaa;">save</span>();</div><div><span style="color: #6a9955;">// The 'slug' attribute in the database will be automatically generated as 'awesome-product-name'</span></div></div></div><div><span style="background-color: transparent; text-align: var(--bs-body-text-align);">This way, you ensure that the </span><b style="background-color: transparent; text-align: var(--bs-body-text-align);">slug attribute</b><span style="background-color: transparent; text-align: var(--bs-body-text-align);"> is populated based on the </span><b style="background-color: transparent; text-align: var(--bs-body-text-align);">name attribute</b><span style="background-color: transparent; text-align: var(--bs-body-text-align);">, making it URL-friendly for use in routes or links.</span><br></div><div><br></div><h4>9.&nbsp;Laravel Eloquent Model Relationships</h4><p>The eloquent relationship is split into: </p><ul><li>One to one </li><li>One to many </li><li>Many to many </li><li>Has One Through </li><li>Has_many Through </li><li>One to One (polymorphic) </li><li>One to Many (polymorphic) </li><li>Many to Many (polymorphic)</li></ul><p>You can get a complete guide on each relationship in the Complete Guide to the Eloquent Relationship.</p><p><br></p><p><b>I hope this helps you. Thanks for reading.</b></p>
+                    </div>
+
+                    <div class="full-block-ads border m-2 p-1 text-center w-100">
+                        
+                        <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-blue -grad">
+                        <h4 class="text-white mb-0">Latest Posts</h4>
+                    </div>
+                    <div class="card-body">
+                                                <div class="lp-title"><a href="laravel-policy-using-spatie-roles-and-permission-tutorial-step-by-step.html">> Laravel Policy using Spatie Roles &amp; Permission Tutorial step by step</a></div>
+                                                <div class="lp-title"><a href="laravel-10-authorization-policy-tutorial-step-by-step-with-example.html">> Laravel 10 Authorization Policy Tutorial step by step | All about Laravel Policy</a></div>
+                                                <div class="lp-title"><a href="multi-guard-authentication-with-breeze-in-laravel-10.html">> Multi Guard Authentication with Breeze in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-spatie-user-roles-and-permissions-tutorial.html">> Laravel 10 Spatie User Roles and Permissions Tutorial</a></div>
+                                                <div class="lp-title"><a href="how-to-make-pagination-in-laravel.html">> How to make pagination in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-export-data-to-excel-file-with-different-format-in-laravel-10.html">> How to Export data to Excel file with different format/extension in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-import-excel-file-data-into-database-in-laravel.html">> How to Import Excel file data into database in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-multiple-image-upload-with-example.html">> Laravel 10 Multiple Image Upload with Example</a></div>
+                                                <div class="lp-title"><a href="ocr-integration-in-laravel-using-laraocr-package-with-tesseract.html">> OCR Integration in Laravel using LaraOCR Package with Tesseract</a></div>
+                                                <div class="lp-title"><a href="laravel-10-crud-with-image-upload-tutorial-with-example.html">> Laravel 10 CRUD with File / Image Upload Tutorial with Example</a></div>
+                                                <div class="lp-title"><a href="laravel-10-api-authentication-using-laravel-sanctum.html">> Laravel 10 - API Authentication using Laravel Sanctum</a></div>
+                                                <div class="lp-title"><a href="different-ways-to-store-data-in-laravel-10.html">> Different Ways to store data in laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-form-validation-tutorial-with-example.html">> Laravel Form Validation Tutorial with example | All about Validation in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-eloquent-model-tutorial-with-example.html">> Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-migrations-tutorial-with-example.html">> Laravel Migrations Tutorial with example | All about Migrations Guide in laravel</a></div>
+                                                <div class="lp-title"><a href="laravel-blade-components-tutorial-with-example-all-about-components-in-laravel.html">> Laravel Blade Components Tutorial with example - All about components in laravel</a></div>
+                                            </div>
+                </div>
+
+                <div class="border p-2 sticky-1">
+
+                    <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-verticle-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="3613281146"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<section class="footer-section-area">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 mt-3">
+                    <h3 class="fw-bold text-white">Funda of Web IT</h3>
+                    <p class="text-white">
+                        2018 - 2023 ©
+                        <a href="https://fundaofwebit.com/" target="_blank" class="text-white font-weight-bold">Funda of Web IT</a>.
+                        All rights reserved.
+                    </p>
+
+                    <p class="footer-nav-link">
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Funda Codester</a> |
+                        <a href="http://blog.fundaofwebit.com/" target="_blank">About Us</a> |
+                        <a href="https://www.fundaofwebit.com/posts">Posts</a> |
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Download Project Source Code</a>
+                    </p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="fw-bold text-white">Stay Connected</h3>
+                    <ul class="footer-icon-social">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.twitter.com/funda_of_web_it" target="_blank" class="social-link">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.instagram.com/funda_of_web_it/" target="_blank" class="social-link">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.youtube.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="../frontend/js/jquery-3.6.0.min.js"></script>
+    <script src="../frontend/js/bootstrap5.bundle.min.js"></script>
+    <script src="../frontend/js/owl.carousel.js"></script>
+    <script src="../frontend/js/custom.js"></script>
+
+
+    <script>
+        setInterval(function() {
+            window.location.reload();
+        }, 1500000);
+    </script>
+
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            alert("Copied Successfully");
+            $temp.remove();
+        }
+    </script>
+
+    
+</body>
+
+<!-- Mirrored from www.fundaofwebit.com/post/laravel-eloquent-model-tutorial-with-example by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:15 GMT -->
+</html>

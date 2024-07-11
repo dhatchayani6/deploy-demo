@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.fundaofwebit.com/post/how-to-create-layout-using-laravel-blade-components-in-laravel-9-10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="fUaTJSZz1w07q1oh0AMmt3R7xeu2B55rbFHVfh8h">
+
+    <title>How to create Layout using Blade Components in Laravel 9 / 10
+</title>
+
+    <meta name="keywords" content="How to create layout using laravel blade components in laravel 9 / 10, blade component in laravel, create layouts using laravel blade component, laravel 10, Blade components for your layout, How To Create a Laravel 9 Blade Layout Templating
+">
+    <meta name="description" content="How to create layout using laravel blade components in laravel 9 / 10, blade component in laravel, create layouts using laravel blade component, laravel 10, Blade components for your layout, How To Create a Laravel 9 Blade Layout Templating
+">
+    <meta name="author" content="Funda of Web IT">
+
+    <link rel="canonical" href="how-to-create-layout-using-laravel-blade-components-in-laravel-9-10.html">
+
+    <link rel="shortcut icon" href="../frontend/images/favicon.jpg" type="image/x-icon">
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link href="../../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+   
+
+    <link rel="stylesheet" href="../frontend/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="../frontend/css/custom2.css">
+    <link rel="stylesheet" href="../frontend/css/custom.css">
+    <link rel="stylesheet" href="../frontend/css/style.css">
+
+    <link rel="stylesheet" href="../frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../frontend/css/owl.theme.default.min.css">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@fundaofwebit">
+    <meta name="twitter:title" content="How to create Layout using Blade Components in Laravel 9 / 10
+">
+    <meta name="twitter:description" content="How to create layout using laravel blade components in laravel 9 / 10, blade component in laravel, create layouts using laravel blade component, laravel 10, Blade components for your layout, How To Create a Laravel 9 Blade Layout Templating
+">
+    <meta name="twitter:image" content="../frontend/images/logo.png">
+    
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Funda Of Web IT",
+        "url": "https://www.fundaofwebit.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.fundaofwebit.com/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+     
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": "How to create Layout using Blade Components in Laravel 9 / 10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.fundaofwebit.com/post/how-to-create-layout-using-laravel-blade-components-in-laravel-9-10"
+      },
+      "datePublished": "2023-08-15",
+      "dateModified": "2023-11-19",
+      "author": {
+        "@type": "Person",
+        "name": "Ved Prakash N",
+        "url": "https://www.linkedin.com/in/ved-prakash-n-2ab634167/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Funda Of Web IT",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fundaofwebit.com/frontend/images/logo.png"
+        }
+      }
+    }
+</script>
+
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177236605-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-177236605-1');
+    </script>
+
+</head>
+<body>
+
+    <div class="shadow-sm border-bottom sticky-top">
+    <div class="top-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none d-md-block">
+                    <a href="javascript:void(0)" class="top-nav-link">Follow Us:</a>
+                    <a href="https://www.facebook.com/fundaofwebit" class="top-nav-link br-r">Facebook</a>
+                    <a href="https://www.instagram.com/funda_of_web_it/" class="top-nav-link">Instagram</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a class="top-nav-link br-r" href="https://www.fundacodester.com/collections" target="_blank">Download Source Code</a>
+                    <a class="top-nav-link" href="https://www.fundaofwebit.com/youtube">My YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container -fluid">
+
+            <a class="navbar-brand" href="https://www.fundaofwebit.com/">
+                <img src="../frontend/images/logo.png" class="nav-logo" alt="Funda of Web IT" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PHP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php">PHP Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-solutions">PHP Solutions</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-firebase">PHP Firebase</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-oop">PHP OOP CRUD Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-pdo">PHP PDO Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Laravel
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-tips">Laravel Tips</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-5-8">Laravel 5.8 Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-8">Laravel 8 Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Python
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/python">Python Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/django">Django Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/selenium-python-tutorial">Selenium Python Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/programming-in-java">Java Programs</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-programs">PHP Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/sql">SQL Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/jquery">jQuery Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/git">Git Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/posts">Posts</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="btn1-outline" href="https://www.fundaofwebit.com/courses">Free Courses</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+    <div id="app">
+
+        
+        <main>
+            
+
+<div class="section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <div class="bg-white shadow-sm p-3">
+
+                    <h1 class="text-primary1 my-3 fs-28 fw-bold">How to create Layout using Blade Components in Laravel 9 / 10</h1>
+
+                    <div class="py-2 px-2 fs-12 bg-blue-grad text-white rounded-2">
+                        <span class="mx-2">By Ved Prakash N </span> |
+                        <span class="mx-2"><i class="fa fa-calendar"></i> Aug 15, 2023</span> |
+                        <span class="mx-2">Laravel</span>
+                    </div>
+
+                    <div class="mb-1">
+                        <span class="fs-14">
+                                                        Share :
+                            <a href="https://api.whatsapp.com/send?text=*How%20to%20create%20Layout%20using%20Blade%20Components%20in%20Laravel%209%20/%2010*%0A%0Ahttps://www.fundaofwebit.com/post/how-to-create-layout-using-laravel-blade-components-in-laravel-9-10" class="px-2 fs-14 text-decoration-underline"><i class="fa fa-whatsapp font-weight-bold"></i> Whatsapp</a>
+                            <p class="p120 d-none">https://www.fundaofwebit.com/post/how-to-create-layout-using-laravel-blade-components-in-laravel-9-10</p>
+                            <button onclick="copyToClipboard('.p120')" class="px-2 fs-14 btn btn-link text-decoration-underline">Copy Link</button>
+                        </span>
+                    </div>
+
+                    <div class="main-heading">
+
+                                                <div>
+                            <iframe class="w-100" height="450" src="https://www.youtube.com/embed/HTa3FU3Ppyk?si=faBHWHbjpwd3U2aS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        
+                    </div>
+
+                    <div class="description py-3">
+                        <h3>How To Create a Laravel 9 / 10 Layout using Laravel Blade Component</h3><p>In this post, you will be learning how to create a blade templating with blade component in laravel</p><p><br></p><h5><span style="text-align: var(--bs-body-text-align); background-color: transparent;">Create Layout</span><span style="text-align: var(--bs-body-text-align); background-color: transparent;">&nbsp;with&nbsp;</span><span style="text-align: var(--bs-body-text-align); background-color: transparent;">Blade&nbsp;</span><span style="text-align: var(--bs-body-text-align); background-color: transparent;">Template&nbsp;</span>Using Template Inheritance in Laravel</h5><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">In a typical Laravel application, you might have a file called <b>layouts/app.blade.php</b> that all of your other views extend from.</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;!</span><span style="color: #569cd6;">doctype</span> <span style="color: #9cdcfe;">html</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">html</span> <span style="color: #9cdcfe;">lang</span>=<span style="color: #ce9178;">"</span><span style="color: #dcdcaa;">{{</span><span style="color: #ce9178;"> </span><span style="color: #dcdcaa;">str_replace</span><span style="color: #ce9178;">('_', '-', </span><span style="color: #dcdcaa;">app</span><span style="color: #ce9178;">()</span>-&gt;<span style="color: #dcdcaa;">getLocale</span><span style="color: #ce9178;">()) </span><span style="color: #dcdcaa;">}}</span><span style="color: #ce9178;">"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span><span style="color: #569cd6;">@yield</span>(<span style="color: #ce9178;">'title'</span>)<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"app"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">main</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">@yield</span>(<span style="color: #ce9178;">'content'</span>)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">main</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">@yield</span>(<span style="color: #ce9178;">'scripts'</span>)</div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div></div><p>And in your actual pages, you will extend that view and provide your content within the content section. Here's an example <b>welcome.blade.php</b> file or create any other file and do the same as shown below:<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">@extends</span>(<span style="color: #ce9178;">'layouts.app'</span>)</div><br><div><span style="color: #569cd6;">@section</span>(<span style="color: #ce9178;">'title'</span>,<span style="color: #ce9178;">"Home Page"</span>)</div><br><div><span style="color: #569cd6;">@section</span>(<span style="color: #ce9178;">'content'</span>)</div><div>&nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span>My Page content is here<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #569cd6;">@endsection</span></div><br><div><span style="color: #569cd6;">@section</span>(<span style="color: #ce9178;">'scripts'</span>)</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">&lt;!-- Some JS and styles --&gt;</span></div><div><span style="color: #569cd6;">@endsection</span></div></div><p><br></p><h5>Create Layout with Blade<span style="font-size: 1.25rem; background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span>using Component in Laravel</h5><p>So guys, let's see how we can make use of our newly learned Blade components to refactor this. </p><p><b>Step 1:</b> First of all, we are going to create a new component called <b>"AppLayout"</b>&nbsp;by running the below command:</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;">php artisan make:component AppLayout</div><p><br></p><p><b>Step 2:</b>&nbsp;we can take all of our existing layout view code and place it inside of our new layout component view in the following <br>path: <b>"resources/views/components/app-layout.blade.php"</b>&nbsp;</p><p>You can use any of the below format to create a blade component layout.</p><p><b>Format 1:&nbsp;</b></p><p>go to path:&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align); font-weight: bolder;">"resources/views/components/app-layout.blade.php"</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;!</span><span style="color: #569cd6;">doctype</span> <span style="color: #9cdcfe;">html</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">html</span> <span style="color: #9cdcfe;">lang</span>=<span style="color: #ce9178;">"</span><span style="color: #dcdcaa;">{{</span><span style="color: #ce9178;"> </span><span style="color: #dcdcaa;">str_replace</span><span style="color: #ce9178;">('_', '-', </span><span style="color: #dcdcaa;">app</span><span style="color: #ce9178;">()</span>-&gt;<span style="color: #dcdcaa;">getLocale</span><span style="color: #ce9178;">()) </span><span style="color: #dcdcaa;">}}</span><span style="color: #ce9178;">"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$title</span> ?? <span style="color: #ce9178;">'Funda Of Web IT'</span> <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"app"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">main</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$slot</span> <span style="color: #dcdcaa;">}}</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">main</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$scripts </span><span style="text-align: var(--bs-body-text-align);">?? </span><span style="text-align: var(--bs-body-text-align); color: rgb(206, 145, 120);">''</span><span style="text-align: var(--bs-body-text-align);"> </span><span style="text-align: var(--bs-body-text-align); color: rgb(220, 220, 170);">}}</span></div><br><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div></div><p>Now lets Extend the&nbsp;<b>layouts</b>&nbsp;in the pages / blade files as follows: so let's go to <b>welcome.blade.php</b> file and paste the below code</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-app-layout</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-slot</span> <span style="color: #9cdcfe;">name</span>=<span style="color: #ce9178;">"title"</span><span style="color: #808080;">&gt;</span>Funda Of Web IT<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-slot</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; My Page content is here</div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-slot</span> <span style="color: #9cdcfe;">name</span>=<span style="color: #ce9178;">"scripts"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">&lt;!-- Your script code --&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-slot</span><span style="color: #808080;">&gt;</span></div><br><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-app-layout</span><span style="color: #808080;">&gt;</span></div></div><p>You can use from this&nbsp;<span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(128, 128, 128);">&lt;</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(86, 156, 214);">x-slot</span><span style="text-align: var(--bs-body-text-align); color: rgb(212, 212, 212); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33);"> </span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(156, 220, 254);">name</span><span style="text-align: var(--bs-body-text-align); color: rgb(212, 212, 212); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33);">=</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(206, 145, 120);">"title"</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(128, 128, 128);">&gt;</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33);"><font color="#d4d4d4">Custom Title</font></span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(128, 128, 128);">&lt;/</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(86, 156, 214);">x-slot</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(128, 128, 128);">&gt;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;to&nbsp;</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(128, 128, 128);">&lt;</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(86, 156, 214);">x-slot</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33);"><font color="#d4d4d4">:</font></span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(206, 145, 120);">title</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(128, 128, 128);">&gt;</span><span style="text-align: var(--bs-body-text-align); color: rgb(212, 212, 212); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33);">Custom Title</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(128, 128, 128);">&lt;/</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(86, 156, 214);">x-slot</span><span style="text-align: var(--bs-body-text-align); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; white-space: pre; background-color: rgb(33, 33, 33); color: rgb(128, 128, 128);">&gt;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;this</span></p><p><br></p><p><span style="font-weight: bolder;">Format 2:</span></p><p>go to path:&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align); font-weight: bolder;">"resources/views/components/app-layout.blade.php"</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;!</span><span style="color: #569cd6;">doctype</span> <span style="color: #9cdcfe;">html</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">html</span> <span style="color: #9cdcfe;">lang</span>=<span style="color: #ce9178;">"</span><span style="color: #dcdcaa;">{{</span><span style="color: #ce9178;"> </span><span style="color: #dcdcaa;">str_replace</span><span style="color: #ce9178;">('_', '-', </span><span style="color: #dcdcaa;">app</span><span style="color: #ce9178;">()</span>-&gt;<span style="color: #dcdcaa;">getLocale</span><span style="color: #ce9178;">()) </span><span style="color: #dcdcaa;">}}</span><span style="color: #ce9178;">"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span><span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$title</span> ?? <span style="color: #ce9178;">'Funda Of Web IT'</span> <span style="color: #dcdcaa;">}}</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"app"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">main</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #dcdcaa;">{{</span> <span style="color: #9cdcfe;">$slot</span> <span style="color: #dcdcaa;">}}</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">main</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">@yield</span>(<span style="color: #ce9178;">'scripts'</span>)</div><br><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Now lets Extend the&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align); font-weight: bolder;">layouts</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;in the pages / blade files as follows: so let's go to&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align); font-weight: bolder;">welcome.blade.php</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;file and paste the below code</span><br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-app-layout</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-slot</span> <span style="color: #9cdcfe;">name</span>=<span style="color: #ce9178;">"title"</span><span style="color: #808080;">&gt;</span>Funda Of Web IT<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-slot</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; My Page content is here</div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">@section</span>(<span style="color: #ce9178;">'scripts'</span>)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">&lt;!-- Your script here --&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">@endsection</span></div><br><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-app-layout</span><span style="color: #808080;">&gt;</span></div></div><p><b><br></b></p><p><b>Format 3:</b></p><p>go to path:&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align); font-weight: bolder;">"resources/views/components/app-layout.blade.php"</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;!</span><span style="color: #569cd6;">doctype</span> <span style="color: #9cdcfe;">html</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">html</span> <span style="color: #9cdcfe;">lang</span>=<span style="color: #ce9178;">"</span><span style="color: #dcdcaa;">{{</span><span style="color: #ce9178;"> </span><span style="color: #dcdcaa;">str_replace</span><span style="color: #ce9178;">('_', '-', </span><span style="color: #dcdcaa;">app</span><span style="color: #ce9178;">()</span>-&gt;<span style="color: #dcdcaa;">getLocale</span><span style="color: #ce9178;">()) </span><span style="color: #dcdcaa;">}}</span><span style="color: #ce9178;">"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;"><br></span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span><span style="color: #569cd6;">@yield</span>(<span style="color: #ce9178;">'title'</span>)<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;"><br></span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;"><br></span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"app"</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">main</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">@yield</span>(<span style="color: #ce9178;">'content'</span>)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">main</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;"><br></span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #569cd6;">@yield</span>(<span style="color: #ce9178;">'scripts'</span>)</div><div><br></div><div>&nbsp; &nbsp; <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div></div><p>Now lets Extend the&nbsp;<span style="font-weight: bolder;">layouts</span>&nbsp;in the pages / blade files as follows: so let's go to&nbsp;<span style="font-weight: bolder;">welcome.blade.php</span>&nbsp;file and paste the below code<br></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">x-layout</span><span style="color: #808080;">&gt;</span></div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">@section</span>(<span style="color: #ce9178;">'title'</span>,<span style="color: #ce9178;">'Funda Of Web IT'</span>)</div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">@section</span>(<span style="color: #ce9178;">'content'</span>)</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span>My Page content is here<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">@endsection</span></div><br><div>&nbsp; &nbsp; <span style="color: #569cd6;">@section</span>(<span style="color: #ce9178;">'scripts'</span>)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6a9955;">&lt;!-- Your script here --&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #569cd6;">@endsection</span></div><br><div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">x-layout</span><span style="color: #808080;">&gt;</span></div></div><p><br></p><p>Thanks for reading. I hope it helped you.</p>
+                    </div>
+
+                    <div class="full-block-ads border m-2 p-1 text-center w-100">
+                        
+                        <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-blue -grad">
+                        <h4 class="text-white mb-0">Latest Posts</h4>
+                    </div>
+                    <div class="card-body">
+                                                <div class="lp-title"><a href="laravel-policy-using-spatie-roles-and-permission-tutorial-step-by-step.html">> Laravel Policy using Spatie Roles &amp; Permission Tutorial step by step</a></div>
+                                                <div class="lp-title"><a href="laravel-10-authorization-policy-tutorial-step-by-step-with-example.html">> Laravel 10 Authorization Policy Tutorial step by step | All about Laravel Policy</a></div>
+                                                <div class="lp-title"><a href="multi-guard-authentication-with-breeze-in-laravel-10.html">> Multi Guard Authentication with Breeze in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-spatie-user-roles-and-permissions-tutorial.html">> Laravel 10 Spatie User Roles and Permissions Tutorial</a></div>
+                                                <div class="lp-title"><a href="how-to-make-pagination-in-laravel.html">> How to make pagination in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-export-data-to-excel-file-with-different-format-in-laravel-10.html">> How to Export data to Excel file with different format/extension in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-import-excel-file-data-into-database-in-laravel.html">> How to Import Excel file data into database in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-multiple-image-upload-with-example.html">> Laravel 10 Multiple Image Upload with Example</a></div>
+                                                <div class="lp-title"><a href="ocr-integration-in-laravel-using-laraocr-package-with-tesseract.html">> OCR Integration in Laravel using LaraOCR Package with Tesseract</a></div>
+                                                <div class="lp-title"><a href="laravel-10-crud-with-image-upload-tutorial-with-example.html">> Laravel 10 CRUD with File / Image Upload Tutorial with Example</a></div>
+                                                <div class="lp-title"><a href="laravel-10-api-authentication-using-laravel-sanctum.html">> Laravel 10 - API Authentication using Laravel Sanctum</a></div>
+                                                <div class="lp-title"><a href="different-ways-to-store-data-in-laravel-10.html">> Different Ways to store data in laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-form-validation-tutorial-with-example.html">> Laravel Form Validation Tutorial with example | All about Validation in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-eloquent-model-tutorial-with-example.html">> Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-migrations-tutorial-with-example.html">> Laravel Migrations Tutorial with example | All about Migrations Guide in laravel</a></div>
+                                                <div class="lp-title"><a href="laravel-blade-components-tutorial-with-example-all-about-components-in-laravel.html">> Laravel Blade Components Tutorial with example - All about components in laravel</a></div>
+                                            </div>
+                </div>
+
+                <div class="border p-2 sticky-1">
+
+                    <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-verticle-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="3613281146"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<section class="footer-section-area">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 mt-3">
+                    <h3 class="fw-bold text-white">Funda of Web IT</h3>
+                    <p class="text-white">
+                        2018 - 2023 ©
+                        <a href="https://fundaofwebit.com/" target="_blank" class="text-white font-weight-bold">Funda of Web IT</a>.
+                        All rights reserved.
+                    </p>
+
+                    <p class="footer-nav-link">
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Funda Codester</a> |
+                        <a href="http://blog.fundaofwebit.com/" target="_blank">About Us</a> |
+                        <a href="https://www.fundaofwebit.com/posts">Posts</a> |
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Download Project Source Code</a>
+                    </p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="fw-bold text-white">Stay Connected</h3>
+                    <ul class="footer-icon-social">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.twitter.com/funda_of_web_it" target="_blank" class="social-link">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.instagram.com/funda_of_web_it/" target="_blank" class="social-link">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.youtube.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="../frontend/js/jquery-3.6.0.min.js"></script>
+    <script src="../frontend/js/bootstrap5.bundle.min.js"></script>
+    <script src="../frontend/js/owl.carousel.js"></script>
+    <script src="../frontend/js/custom.js"></script>
+
+
+    <script>
+        setInterval(function() {
+            window.location.reload();
+        }, 1500000);
+    </script>
+
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            alert("Copied Successfully");
+            $temp.remove();
+        }
+    </script>
+
+    
+</body>
+
+<!-- Mirrored from www.fundaofwebit.com/post/how-to-create-layout-using-laravel-blade-components-in-laravel-9-10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:15 GMT -->
+</html>

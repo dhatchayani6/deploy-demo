@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.fundaofwebit.com/post/different-ways-to-store-data-in-laravel-10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="fUaTJSZz1w07q1oh0AMmt3R7xeu2B55rbFHVfh8h">
+
+    <title>Different Ways to store data in laravel 10
+</title>
+
+    <meta name="keywords" content="how to many ways to store data in laravel, different Ways to store data in laravel 10, How many ways exist to Store data into database in laravel?
+">
+    <meta name="description" content="how to many ways to store data in laravel, different Ways to store data in laravel 10, How many ways exist to Store data into database in laravel?
+">
+    <meta name="author" content="Funda of Web IT">
+
+    <link rel="canonical" href="different-ways-to-store-data-in-laravel-10.html">
+
+    <link rel="shortcut icon" href="../frontend/images/favicon.jpg" type="image/x-icon">
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link href="../../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+   
+
+    <link rel="stylesheet" href="../frontend/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="../frontend/css/custom2.css">
+    <link rel="stylesheet" href="../frontend/css/custom.css">
+    <link rel="stylesheet" href="../frontend/css/style.css">
+
+    <link rel="stylesheet" href="../frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../frontend/css/owl.theme.default.min.css">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@fundaofwebit">
+    <meta name="twitter:title" content="Different Ways to store data in laravel 10
+">
+    <meta name="twitter:description" content="how to many ways to store data in laravel, different Ways to store data in laravel 10, How many ways exist to Store data into database in laravel?
+">
+    <meta name="twitter:image" content="../frontend/images/logo.png">
+    
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Funda Of Web IT",
+        "url": "https://www.fundaofwebit.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.fundaofwebit.com/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+     
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": "Different Ways to store data in laravel 10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.fundaofwebit.com/post/different-ways-to-store-data-in-laravel-10"
+      },
+      "datePublished": "2023-12-10",
+      "dateModified": "2023-12-21",
+      "author": {
+        "@type": "Person",
+        "name": "Ved Prakash N",
+        "url": "https://www.linkedin.com/in/ved-prakash-n-2ab634167/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Funda Of Web IT",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fundaofwebit.com/frontend/images/logo.png"
+        }
+      }
+    }
+</script>
+
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177236605-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-177236605-1');
+    </script>
+
+</head>
+<body>
+
+    <div class="shadow-sm border-bottom sticky-top">
+    <div class="top-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none d-md-block">
+                    <a href="javascript:void(0)" class="top-nav-link">Follow Us:</a>
+                    <a href="https://www.facebook.com/fundaofwebit" class="top-nav-link br-r">Facebook</a>
+                    <a href="https://www.instagram.com/funda_of_web_it/" class="top-nav-link">Instagram</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a class="top-nav-link br-r" href="https://www.fundacodester.com/collections" target="_blank">Download Source Code</a>
+                    <a class="top-nav-link" href="https://www.fundaofwebit.com/youtube">My YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container -fluid">
+
+            <a class="navbar-brand" href="https://www.fundaofwebit.com/">
+                <img src="../frontend/images/logo.png" class="nav-logo" alt="Funda of Web IT" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PHP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php">PHP Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-solutions">PHP Solutions</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-firebase">PHP Firebase</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-oop">PHP OOP CRUD Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-pdo">PHP PDO Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Laravel
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-tips">Laravel Tips</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-5-8">Laravel 5.8 Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/laravel-8">Laravel 8 Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Python
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/python">Python Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/django">Django Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/selenium-python-tutorial">Selenium Python Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/programming-in-java">Java Programs</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/php-programs">PHP Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/sql">SQL Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/jquery">jQuery Tutorial</a></li>
+                            <li><a class="dropdown-item" href="https://www.fundaofwebit.com/git">Git Tutorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.fundaofwebit.com/posts">Posts</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="btn1-outline" href="https://www.fundaofwebit.com/courses">Free Courses</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+    <div id="app">
+
+        
+        <main>
+            
+
+<div class="section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <div class="bg-white shadow-sm p-3">
+
+                    <h1 class="text-primary1 my-3 fs-28 fw-bold">Different Ways to store data in laravel 10</h1>
+
+                    <div class="py-2 px-2 fs-12 bg-blue-grad text-white rounded-2">
+                        <span class="mx-2">By Ved Prakash N </span> |
+                        <span class="mx-2"><i class="fa fa-calendar"></i> Dec 10, 2023</span> |
+                        <span class="mx-2">Laravel</span>
+                    </div>
+
+                    <div class="mb-1">
+                        <span class="fs-14">
+                                                        Share :
+                            <a href="https://api.whatsapp.com/send?text=*Different%20Ways%20to%20store%20data%20in%20laravel%2010*%0A%0Ahttps://www.fundaofwebit.com/post/different-ways-to-store-data-in-laravel-10" class="px-2 fs-14 text-decoration-underline"><i class="fa fa-whatsapp font-weight-bold"></i> Whatsapp</a>
+                            <p class="p141 d-none">https://www.fundaofwebit.com/post/different-ways-to-store-data-in-laravel-10</p>
+                            <button onclick="copyToClipboard('.p141')" class="px-2 fs-14 btn btn-link text-decoration-underline">Copy Link</button>
+                        </span>
+                    </div>
+
+                    <div class="main-heading">
+
+                                                <div>
+                            <iframe class="w-100" height="450" src="https://www.youtube.com/embed/FahSdy65HV8?si=Lqc5qjnIbBbfLOVJ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        
+                    </div>
+
+                    <div class="description py-3">
+                        <h3>How many ways exist to Store data into database in laravel?</h3><p><br></p><p>In this post, we will learn how&nbsp;<span style="background-color: transparent; text-align: var(--bs-body-text-align);">to store data into</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">database in&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Different Ways in Laravel 10. So let's begin.</span></p><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><br></span></p><h4>Model ( $model-&gt;property )</h4><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">store</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span> = <span style="color: #569cd6;">new</span> <span style="color: #4ec9b0;">Product</span>();</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #9cdcfe;">name</span> = <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span>;</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #9cdcfe;">price</span> = <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">price</span>;</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #9cdcfe;">description</span> = <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">description</span>;</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span>-&gt;is_<span style="color: #9cdcfe;">active</span> = <span style="color: #9cdcfe;">$request</span>-&gt;is_<span style="color: #9cdcfe;">active</span>;</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #dcdcaa;">save</span>();</div><div>}</div></div><p><br></p><h4>Model Create</h4><p>In this Model Create: we use the&nbsp;<b>Eloquent Model</b>&nbsp;to store the data and you can also give selected column name/attribute to insert data.</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">store</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Product</span>::<span style="color: #dcdcaa;">create</span>([</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">price</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> &nbsp;=&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">description</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> &nbsp;=&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">is_active</span></div><div>&nbsp; &nbsp; ]);</div><div>}</div></div><p><br></p><h4>Model Create with $request-&gt;all() method</h4><p><b>Note:</b> If you save as shown below, make sure to add all the fields in your<b> $fillable property</b> in your Model ( Eg. Product.php Model )</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">store</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Product</span>::<span style="color: #dcdcaa;">create</span>(<span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #dcdcaa;">all</span>());</div><div>}</div></div><p>Example for fillable property in your model:&nbsp;</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Product</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Model</span> {</div><div>&nbsp; &nbsp; <span style="color: #569cd6;">protected</span> <span style="color: #9cdcfe;">$fillable</span> = [<span style="color: #ce9178;">'name'</span>, <span style="color: #ce9178;">'price'</span>, <span style="color: #ce9178;">'description'</span>];</div><div>}</div></div><p><br></p><h4>Model Create with $request-&gt;only() method</h4><p>Note: Add all the field names in the Model (app/Models/<b>Product.php</b> file)&nbsp;</p><p>The below code to save data is for specific fields only, where you can choose "FORM Input fields" using the&nbsp;<b>$request-&gt;only()</b> method and save data as shown below:&nbsp;</p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">store</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Product</span>::<span style="color: #dcdcaa;">create</span>(<span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #dcdcaa;">only</span>([<span style="color: #ce9178;">'name'</span>,<span style="color: #ce9178;">'price'</span>,<span style="color: #ce9178;">'description'</span>]));</div><div>}</div></div><p><br></p><h4><span style="background-color: transparent; text-align: var(--bs-body-text-align);">New Model</span></h4><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">We can create and <b>inject attributes</b> to constructor of the model and save data&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">using <b>save() method</b>&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">with the object of the model.</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">store</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span> = <span style="color: #569cd6;">new</span> <span style="color: #4ec9b0;">Product</span>([</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">price</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> &nbsp;=&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">description</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> &nbsp;=&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">is_active</span></div><div>&nbsp; &nbsp; ]);</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #dcdcaa;">save</span>();</div><div>}</div></div><p><br></p><h4><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Model using Fill() method and save()</span></h4><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">We use the <b>fill()</b> method to build/add</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);">&nbsp;all the fields with data on Eloquent as shown below:</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">store</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span> = <span style="color: #569cd6;">new</span> <span style="color: #4ec9b0;">Product</span>();</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #dcdcaa;">fill</span>([</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">price</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> &nbsp;=&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">description</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> &nbsp;=&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">is_active</span></div><div>&nbsp; &nbsp; ]);</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #dcdcaa;">save</span>();</div><div>}</div></div><p><br></p><h4><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Query Builder</span></h4><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">We can use Query Builder for saving data in database like this:<br></span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">store</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">DB</span>::<span style="color: #dcdcaa;">table</span>(<span style="color: #ce9178;">'products'</span>)-&gt;<span style="color: #dcdcaa;">insert</span>([</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">price</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">description</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">is_active</span></div><div>&nbsp; &nbsp; ]);</div><div>}</div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><br></span></p><h4><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Save data using insert() with Model:</span></h4><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Here, this <b>insert()</b>&nbsp;method uses the Query builder method and it do not creates or save timestamp fields in database by default instead it keeps it NULL. but in <b>create()</b> method it save with timestamp.</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">store</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span> = [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">price</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">description</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'is_active'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">is_active</span></div><div>&nbsp; &nbsp; ];</div><br><div>&nbsp; &nbsp; <span style="color: #4ec9b0;">Product</span>::<span style="color: #dcdcaa;">insert</span>(<span style="color: #9cdcfe;">$product</span>);</div><div>}</div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><br></span></p><h4><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Model with&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><b>firstOrCreate()</b> method to save data.</span></h4><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">The <b>firstOrCreate() </b>method in Laravel's Eloquent ORM is used to retrieve the first record matching the specified attributes. If no matching record is found, it creates a new record in the database with the given attributes. Here's an example of how <b>firstOrCreate()</b> can be used in Laravel:<br></span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">store</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div style="line-height: 19px;"><div><span style="color: #9cdcfe;">    $product</span> = <span style="color: #4ec9b0;">Product</span>::<span style="color: #dcdcaa;">firstOrCreate</span>(</div><div>&nbsp; &nbsp; &nbsp; &nbsp; [ <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span> ],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">price</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">description</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; ]</div></div><div><span style="text-align: var(--bs-body-text-align);">&nbsp; &nbsp; );</span></div><div><span style="text-align: var(--bs-body-text-align);">}</span><br></div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><br></span></p><h4 style="color: rgb(0, 0, 0);"><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Model with&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><span style="font-weight: bolder;">firstOrNew()</span>&nbsp;method to save data.</span></h4><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">The&nbsp;<b>firstOrNew</b><span style="font-weight: bolder;">()&nbsp;</span>method in Laravel's Eloquent ORM is used to retrieve the first record matching the specified attributes. If no matching record is found, it will only be saved to the database when you explicitly do so (calling <b>save() </b>on the model). Otherwise, it will give you the matched item. Here's an example of how&nbsp;</span><span style="font-weight: bolder;">firstOrNew</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><span style="font-weight: bolder;">()</span>&nbsp;can be used in Laravel:</span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><div style="line-height: 19px;"><div><span style="color: #9cdcfe;">$product</span> = <span style="color: #4ec9b0;">Product</span>::<span style="color: #dcdcaa;">firstOrNew</span>(</div><div>&nbsp; &nbsp; [ <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span> ],</div><div>&nbsp; &nbsp; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">price</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">description</span></div><div>&nbsp; &nbsp; ]</div><div>);</div><div><span style="color: #9cdcfe;">$product</span>-&gt;<span style="color: #dcdcaa;">save</span>();</div></div></div></div><p><br></p><h4 style="color: rgb(0, 0, 0);"><span style="background-color: transparent; text-align: var(--bs-body-text-align);">Model with&nbsp;</span><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><span style="font-weight: bolder;">updateOrCreate()</span>&nbsp;method to save data.</span></h4><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">The <b>updateOrCreate()</b> method in Laravel's Eloquent ORM is used to find a record that matches the given attributes. If found, it updates the record with the specified values; if not found, it creates a new record with the provided attributes. Here's an example demonstrating the usage of <b>updateOrCreate()</b>:<br></span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #569cd6;">public</span> <span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">storeOrUpdate</span>(<span style="color: #4ec9b0;">Request</span> <span style="color: #9cdcfe;">$request</span>)</div><div>{</div><div>&nbsp; &nbsp; <span style="color: #9cdcfe;">$product</span> = <span style="color: #4ec9b0;">Product</span>::<span style="color: #dcdcaa;">updateOrCreate</span>(</div><div>&nbsp; &nbsp; &nbsp; &nbsp; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; ],</div><div>&nbsp; &nbsp; &nbsp; &nbsp; [</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">name</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">price</span>,</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ce9178;">'description'</span> =&gt; <span style="color: #9cdcfe;">$request</span>-&gt;<span style="color: #9cdcfe;">description</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp; ]</div><div>&nbsp; &nbsp; );</div><div>}</div></div><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);"><br></span></p><h4 style="">Upsert() in Laravel: Updating Existing Records and Inserting New Data Dynamically<span style="color: rgb(0, 0, 0); background-color: transparent; text-align: var(--bs-body-text-align);">.</span></h4><p><span style="background-color: transparent; text-align: var(--bs-body-text-align);">In Laravel, the <b>upsert()</b> method allows you to perform an <b>"upsert" </b>operation, which means <b>updating existing records </b>or <b>inserting new records</b> based on a given set of conditions. It's particularly useful when dealing with bulk operations or when you want to update existing records or insert new ones based on certain criteria.<br></span></p><div class="alert funda-bg" style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #6a9955;">// Products data to be updated or inserted</span></div><div><span style="color: #9cdcfe;">$productsData</span> = [</div><div>&nbsp; &nbsp; [<span style="color: #ce9178;">'id'</span> =&gt; <span style="color: #b5cea8;">1</span>, <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'Product A'</span>, <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #b5cea8;">20.00</span>],</div><div>&nbsp; &nbsp; [<span style="color: #ce9178;">'id'</span> =&gt; <span style="color: #b5cea8;">2</span>, <span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'Product B'</span>, <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #b5cea8;">25.00</span>],</div><div>&nbsp; &nbsp; [<span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'Product C'</span>, <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #b5cea8;">30.00</span>],</div><div>&nbsp; &nbsp; [<span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'Product D'</span>, <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #b5cea8;">40.00</span>],</div><div>&nbsp; &nbsp; [<span style="color: #ce9178;">'name'</span> =&gt; <span style="color: #ce9178;">'Product E'</span>, <span style="color: #ce9178;">'price'</span> =&gt; <span style="color: #b5cea8;">46.00</span>],</div><div>&nbsp; &nbsp; <span style="color: #6a9955;">// ... more data</span></div><div>];</div><br><div><span style="color: #4ec9b0;">Product</span>::<span style="color: #dcdcaa;">upsert</span>(<span style="color: #9cdcfe;">$productsData</span>, [<span style="color: #ce9178;">'id'</span>], [<span style="color: #ce9178;">'name'</span>, <span style="color: #ce9178;">'price'</span>]);</div></div><p><br></p><p><b>Thanks for reading...</b></p>
+                    </div>
+
+                    <div class="full-block-ads border m-2 p-1 text-center w-100">
+                        
+                        <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-horizontal-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="2433923238"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-blue -grad">
+                        <h4 class="text-white mb-0">Latest Posts</h4>
+                    </div>
+                    <div class="card-body">
+                                                <div class="lp-title"><a href="laravel-policy-using-spatie-roles-and-permission-tutorial-step-by-step.html">> Laravel Policy using Spatie Roles &amp; Permission Tutorial step by step</a></div>
+                                                <div class="lp-title"><a href="laravel-10-authorization-policy-tutorial-step-by-step-with-example.html">> Laravel 10 Authorization Policy Tutorial step by step | All about Laravel Policy</a></div>
+                                                <div class="lp-title"><a href="multi-guard-authentication-with-breeze-in-laravel-10.html">> Multi Guard Authentication with Breeze in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-spatie-user-roles-and-permissions-tutorial.html">> Laravel 10 Spatie User Roles and Permissions Tutorial</a></div>
+                                                <div class="lp-title"><a href="how-to-make-pagination-in-laravel.html">> How to make pagination in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-export-data-to-excel-file-with-different-format-in-laravel-10.html">> How to Export data to Excel file with different format/extension in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="how-to-import-excel-file-data-into-database-in-laravel.html">> How to Import Excel file data into database in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-10-multiple-image-upload-with-example.html">> Laravel 10 Multiple Image Upload with Example</a></div>
+                                                <div class="lp-title"><a href="ocr-integration-in-laravel-using-laraocr-package-with-tesseract.html">> OCR Integration in Laravel using LaraOCR Package with Tesseract</a></div>
+                                                <div class="lp-title"><a href="laravel-10-crud-with-image-upload-tutorial-with-example.html">> Laravel 10 CRUD with File / Image Upload Tutorial with Example</a></div>
+                                                <div class="lp-title"><a href="laravel-10-api-authentication-using-laravel-sanctum.html">> Laravel 10 - API Authentication using Laravel Sanctum</a></div>
+                                                <div class="lp-title"><a href="different-ways-to-store-data-in-laravel-10.html">> Different Ways to store data in laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-form-validation-tutorial-with-example.html">> Laravel Form Validation Tutorial with example | All about Validation in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-eloquent-model-tutorial-with-example.html">> Laravel Eloquent Model Tutorial with example | All about Models in Laravel 10</a></div>
+                                                <div class="lp-title"><a href="laravel-migrations-tutorial-with-example.html">> Laravel Migrations Tutorial with example | All about Migrations Guide in laravel</a></div>
+                                                <div class="lp-title"><a href="laravel-blade-components-tutorial-with-example-all-about-components-in-laravel.html">> Laravel Blade Components Tutorial with example - All about components in laravel</a></div>
+                                            </div>
+                </div>
+
+                <div class="border p-2 sticky-1">
+
+                    <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle google-verticle-size"
+    data-ad-client="ca-pub-7023661300891807"
+    data-ad-slot="3613281146"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<section class="footer-section-area">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 mt-3">
+                    <h3 class="fw-bold text-white">Funda of Web IT</h3>
+                    <p class="text-white">
+                        2018 - 2023 ©
+                        <a href="https://fundaofwebit.com/" target="_blank" class="text-white font-weight-bold">Funda of Web IT</a>.
+                        All rights reserved.
+                    </p>
+
+                    <p class="footer-nav-link">
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Funda Codester</a> |
+                        <a href="http://blog.fundaofwebit.com/" target="_blank">About Us</a> |
+                        <a href="https://www.fundaofwebit.com/posts">Posts</a> |
+                        <a href="https://www.fundacodester.com/collections/" target="_blank">Download Project Source Code</a>
+                    </p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="fw-bold text-white">Stay Connected</h3>
+                    <ul class="footer-icon-social">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.twitter.com/funda_of_web_it" target="_blank" class="social-link">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.instagram.com/funda_of_web_it/" target="_blank" class="social-link">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pl-4">
+                            <a href="https://www.youtube.com/fundaofwebit" target="_blank" class="social-link">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="../frontend/js/jquery-3.6.0.min.js"></script>
+    <script src="../frontend/js/bootstrap5.bundle.min.js"></script>
+    <script src="../frontend/js/owl.carousel.js"></script>
+    <script src="../frontend/js/custom.js"></script>
+
+
+    <script>
+        setInterval(function() {
+            window.location.reload();
+        }, 1500000);
+    </script>
+
+    <script>
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            alert("Copied Successfully");
+            $temp.remove();
+        }
+    </script>
+
+    
+</body>
+
+<!-- Mirrored from www.fundaofwebit.com/post/different-ways-to-store-data-in-laravel-10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 12:58:15 GMT -->
+</html>
